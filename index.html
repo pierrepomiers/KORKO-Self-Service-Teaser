@@ -19,11 +19,6 @@ html,body{width:100%;overflow:hidden;position:fixed;left:0;top:0}
 h1{font-size:96px;font-weight:600}h2{font-size:64px;font-weight:600}h3{font-size:44px;font-weight:600}
 x-shape,x-icon{display:block}x-shape[kind=diamond]{transform:rotate(45deg) scale(.72)}
 a.hl{color:inherit;text-decoration:underline;text-decoration-color:#0B6A70;text-underline-offset:8px}
-.langpick{position:absolute;right:128px;bottom:112px;display:flex;flex-direction:column;align-items:flex-end;gap:18px}
-.lpl{font-size:26px;color:#FFFDF9;text-shadow:0 2px 16px rgba(6,10,16,.7)}
-.lpb{display:flex;gap:18px}
-.lpb button{font:600 34px/1 'Inter Tight',Inter,Arial,sans-serif;color:#FFFDF9;background:rgba(12,26,29,.45);border:2px solid #FFFDF9;border-radius:44px;padding:20px 40px;cursor:pointer}
-.lpb button.cur{background:#FFFDF9;color:#10262A}
 #bar{position:fixed;right:max(10px,env(safe-area-inset-right));bottom:max(8px,env(safe-area-inset-bottom));display:flex;align-items:center;gap:6px;padding:5px 6px;border-radius:24px;background:rgba(12,26,29,.72);color:#F3EEE2;font:500 14px/1 Inter,Arial,sans-serif;user-select:none;-webkit-user-select:none;transition:opacity .35s;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
 #bar.idle{opacity:0;pointer-events:none}
 #bar button{font:inherit;color:inherit;background:none;border:1px solid rgba(243,238,226,.35);border-radius:18px;height:32px;min-width:40px;padding:0 10px;cursor:pointer;-webkit-tap-highlight-color:transparent}
@@ -239,7 +234,7 @@ p{font-size:28px;line-height:1.42;color:#46585A}
 <h1 class="fst mt24">Surf more, own less.</h1>
 <div class="grow"></div>
 <p class="small sh">KORKO Self-Service · GREEN WAVE SAS · Anglet, French Basque Country</p>
-<div class="langpick"><p class="lpl">Choose your language</p><div class="lpb"><button type="button" data-set="fr">Français</button><button type="button" data-set="en" class="cur">English</button></div></div></section>
+</section>
 <section id="en-garage" data-lang="en" data-n="2" style="counter-reset:page 1" class="fs" data-transition="fade">
 <img loading="lazy" decoding="async" class="bleed" src="assets/611d618186c19de54963430efd151094.jpg" alt="A garage crammed with surfboards, wetsuits, board bags, boxes and beach chairs">
 <div class="fsg"></div>
@@ -603,7 +598,7 @@ p{font-size:28px;line-height:1.42;color:#46585A}
 <h1 class="fst mt24">Surfer plus, posséder moins.</h1>
 <div class="grow"></div>
 <p class="small sh">KORKO Self-Service · GREEN WAVE SAS · Anglet, Pays basque</p>
-<div class="langpick"><p class="lpl">Choisissez votre langue</p><div class="lpb"><button type="button" data-set="fr" class="cur">Français</button><button type="button" data-set="en">English</button></div></div></section>
+</section>
 <section id="fr-garage" data-lang="fr" data-n="2" style="counter-reset:page 1" class="fs" data-transition="fade">
 <img loading="lazy" decoding="async" class="bleed" src="assets/611d618186c19de54963430efd151094.jpg" alt="A garage crammed with surfboards, wetsuits, board bags, boxes and beach chairs">
 <div class="fsg"></div>
@@ -965,7 +960,7 @@ p{font-size:28px;line-height:1.42;color:#46585A}
 <script>(function(){
 var N=26,UI={"en": {"pick": "Choose your language", "rot": "Turn your phone sideways for a larger view", "prev": "Previous", "next": "Next"}, "fr": {"pick": "Choisissez votre langue", "rot": "Tournez votre téléphone pour voir plus grand", "prev": "Précédent", "next": "Suivant"}},META={"en": ["KORKO Self-Service: surf more, own less", "Cork surfboards rented by the minute, from self-service stations near the beach. Three pilot stations on the French Atlantic coast, summer 2027."], "fr": ["KORKO Self-Service : surfer plus, posséder moins", "Des planches de surf en liège louées à la minute, en libre-service près de la plage. Trois stations pilotes sur la côte atlantique, été 2027."]},stage=document.getElementById('stage'),frame=document.getElementById('frame');
 var lang,n,bar=document.getElementById('bar'),idleT=null,touch=matchMedia('(hover: none)').matches;
-function wake(){bar.classList.remove('idle');clearTimeout(idleT);idleT=setTimeout(function(){bar.classList.add('idle');},touch?2600:4000);}
+function wake(){bar.classList.remove('idle');clearTimeout(idleT);idleT=setTimeout(function(){if(n!==1)bar.classList.add('idle');},touch?2600:4000);}
 var fsb=document.getElementById('fs'),de0=document.documentElement,canFs=!!(de0.requestFullscreen||de0.webkitRequestFullscreen)&&(document.fullscreenEnabled||document.webkitFullscreenEnabled);
 if(!canFs)fsb.style.display='none';
 function toggleFs(){var el=document.fullscreenElement||document.webkitFullscreenElement;
@@ -979,7 +974,7 @@ function show(l,i,push){i=Math.max(1,Math.min(N,i));
  var old=stage.querySelector('section.on');if(old){old.classList.remove('on');var ov=old.querySelector('video');if(ov)ov.pause();}
  lang=l;n=i;var s=sec(l,i);warm(l,i);s.classList.add('on');
  var v=s.querySelector('video');if(v){v.currentTime=0;var p=v.play();if(p&&p.catch)p.catch(function(){});}
- warm(l,i+1);warm(l,i+2);
+ warm(l,i+1);warm(l,i+2);wake();
  document.documentElement.lang=l;document.title=META[l][0];
  document.getElementById('cnt').textContent=i+' / '+N;
  document.getElementById('prev').disabled=i===1;document.getElementById('next').disabled=i===N;
@@ -992,7 +987,7 @@ function fromHash(){var m=/^#(fr|en)\/(\d+)$/.exec(location.hash);if(m)return[m[
  var l=null;try{l=localStorage.getItem('korko-lang');}catch(e){}
  if(l!=='fr'&&l!=='en')l=/^fr/i.test(navigator.language||'')?'fr':'en';return[l,1];}
 document.addEventListener('click',function(e){var t=e.target;
- var b=t.closest&&t.closest('[data-set]');if(b){var onCover=!!b.closest('.langpick');show(b.dataset.set,onCover?2:n,true);return;}
+ var b=t.closest&&t.closest('[data-set]');if(b){show(b.dataset.set,n,true);return;}
  if(t.closest&&t.closest('#prev')){show(lang,n-1,true);return;}
  if(t.closest&&t.closest('#next')){show(lang,n+1,true);return;}
  if(t.closest&&t.closest('#fs')){toggleFs();return;}
