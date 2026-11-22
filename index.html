@@ -1,0 +1,1004 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>KORKO Self-Service: surf more, own less</title>
+<meta name="description" content="Cork surfboards rented by the minute, from self-service stations near the beach. Three pilot stations on the French Atlantic coast, summer 2027.">
+<meta property="og:title" content="KORKO Self-Service: surf more, own less"><meta property="og:description" content="Cork surfboards rented by the minute, from self-service stations near the beach. Three pilot stations on the French Atlantic coast, summer 2027.">
+<meta property="og:type" content="website"><meta property="og:image" content="assets/2d7672e94fd74d6f6d617b9f652d61c5.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230B6A70'/%3E%3Crect x='9' y='9' width='14' height='14' fill='%23E8B77A' transform='rotate(45 16 16)'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
+<style>*{margin:0;box-sizing:content-box}html,body{height:100%}body{background:#0C1A1D;font:32px/1.2 Inter,Arial,sans-serif;overflow:hidden;-webkit-text-size-adjust:100%}
+html,body{width:100%;overflow:hidden;position:fixed;left:0;top:0}
+#frame{position:fixed;left:0;top:0;width:0;height:0;overflow:hidden;background:#0C1A1D}
+#stage{width:1920px;height:1080px;transform-origin:0 0;position:relative}
+#stage>section{width:1920px!important;height:1080px!important;overflow:hidden!important;box-sizing:border-box!important;position:absolute;left:0;top:0;isolation:isolate}
+#stage>section:not(.on){display:none!important}
+:where(#stage>section>*){position:relative}
+h1{font-size:96px;font-weight:600}h2{font-size:64px;font-weight:600}h3{font-size:44px;font-weight:600}
+x-shape,x-icon{display:block}x-shape[kind=diamond]{transform:rotate(45deg) scale(.72)}
+a.hl{color:inherit;text-decoration:underline;text-decoration-color:#0B6A70;text-underline-offset:8px}
+.langpick{position:absolute;right:128px;bottom:112px;display:flex;flex-direction:column;align-items:flex-end;gap:18px}
+.lpl{font-size:26px;color:#FFFDF9;text-shadow:0 2px 16px rgba(6,10,16,.7)}
+.lpb{display:flex;gap:18px}
+.lpb button{font:600 34px/1 'Inter Tight',Inter,Arial,sans-serif;color:#FFFDF9;background:rgba(12,26,29,.45);border:2px solid #FFFDF9;border-radius:44px;padding:20px 40px;cursor:pointer}
+.lpb button.cur{background:#FFFDF9;color:#10262A}
+#bar{position:fixed;left:0;right:0;bottom:0;height:52px;display:flex;align-items:center;justify-content:center;gap:10px;background:#0C1A1D;color:#E9E2D3;font:500 15px/1 Inter,Arial,sans-serif;user-select:none}
+#bar button{font:inherit;color:inherit;background:none;border:1px solid #3A4F53;border-radius:20px;height:34px;min-width:44px;padding:0 14px;cursor:pointer}
+#bar button:hover{border-color:#E9E2D3}#bar button[disabled]{opacity:.35;cursor:default}
+#bar .sp{flex:0 0 12px}#cnt{min-width:58px;text-align:center}#prev,#next{width:52px;padding:0}#lg{display:flex;flex:none}#lg button{min-width:46px;padding:0 12px}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+#lg button{border-radius:0;margin-left:-1px}#lg button:first-child{border-radius:20px 0 0 20px;margin-left:0}#lg button:last-child{border-radius:0 20px 20px 0}
+#lg button.cur{background:#E9E2D3;color:#0C1A1D;border-color:#E9E2D3}
+#rot{position:fixed;left:0;right:0;top:0;padding:10px 14px;text-align:center;background:#0B6A70;color:#FBF7EE;font:500 14px/1.3 Inter,Arial,sans-serif;display:none}
+@media (orientation:portrait) and (max-width:700px){#rot{display:block}}
+section{background:#F6F1E7;color:#10262A;font-family:'Inter',Arial,sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;counter-increment:page}
+h1{font-family:'Inter Tight','Inter',Arial,sans-serif;font-size:76px;font-weight:700;line-height:1.06;letter-spacing:-2px;color:#10262A}
+h2{font-family:'Inter Tight','Inter',Arial,sans-serif;font-size:64px;font-weight:700;line-height:1.08;letter-spacing:-1.5px;color:#10262A;margin-bottom:44px}
+h3{font-family:'Inter Tight','Inter',Arial,sans-serif;font-size:36px;font-weight:600;line-height:1.18;color:#10262A}
+p{font-size:28px;line-height:1.42;color:#46585A}
+.accent{background:#0B5560}
+.eb{display:flex;align-items:center;gap:16px;margin-bottom:26px}
+.dia{width:18px;height:18px;background:#C8935A}
+.diad{width:18px;height:18px;background:#F6F1E7}
+.ebt{font-size:24px;font-weight:600;letter-spacing:3px;line-height:1.2;color:#0B6A70}
+.ebtd{font-size:24px;font-weight:600;letter-spacing:3px;line-height:1.2;color:#F6F1E7}
+.lead{font-size:36px;line-height:1.36;color:#2E4447}
+.ink{color:#10262A}
+.dark{color:#F6F1E7}
+.num{font-family:'Inter Tight','Inter',Arial,sans-serif;font-size:104px;font-weight:700;line-height:1;letter-spacing:-3px;color:#10262A}
+.num2{font-family:'Inter Tight','Inter',Arial,sans-serif;font-size:80px;font-weight:700;line-height:1;letter-spacing:-2px;color:#10262A}
+.num3{font-family:'Inter Tight','Inter',Arial,sans-serif;font-size:88px;font-weight:700;line-height:1;letter-spacing:-2.5px;color:#0B6A70}
+.num4{font-family:'Inter Tight','Inter',Arial,sans-serif;font-size:72px;font-weight:700;line-height:1;letter-spacing:-2px;color:#0B6A70}
+.card4{flex:1;min-width:0;background:#FFFDF9;border:1px solid #E2D8C6;border-radius:12px;padding:32px 28px;display:flex;flex-direction:column;gap:14px}
+.card5{min-width:0;background:#FFFDF9;border:1px solid #E2D8C6;border-radius:12px;padding:24px 28px;display:flex;flex-direction:column;gap:8px}
+.grid2c{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.cork{color:#9C5A1E}
+.teal{color:#0A6F78}
+.lab{font-size:24px;font-weight:600;letter-spacing:2px;line-height:1.3;color:#0B6A70}
+.small{font-size:24px;line-height:1.4;color:#5F6E6F}
+.houses{font-family:'Inter Tight','Inter',Arial,sans-serif;font-size:44px;font-weight:600;line-height:1.25;color:#10262A}
+.row{display:flex;gap:32px}
+.row48{display:flex;gap:48px}
+.row64{display:flex;gap:64px}
+.grow{flex:1}
+.col{display:flex;flex-direction:column}
+.g8{display:flex;flex-direction:column;gap:8px}
+.g12{display:flex;flex-direction:column;gap:12px}
+.g20{display:flex;flex-direction:column;gap:20px}
+.g28{display:flex;flex-direction:column;gap:28px}
+.g36{display:flex;flex-direction:column;gap:36px}
+.mb16{margin-bottom:16px}
+.mb28{margin-bottom:28px}
+.mb40{margin-bottom:40px}
+.w800{width:800px;display:flex;flex-direction:column}
+.w880{width:880px;display:flex;flex-direction:column}
+.w1040{width:1040px;display:flex;flex-direction:column}
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:28px 40px}
+.card{flex:1;min-width:0;background:#FFFDF9;border:1px solid #E2D8C6;border-radius:12px;padding:36px;display:flex;flex-direction:column;gap:14px}
+.cardd{flex:1;background:#F6F1E7;border-radius:12px;padding:32px;display:flex;flex-direction:column;gap:10px}
+.pcard{flex:1;background:#FFFDF9;border:1px solid #E2D8C6;border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.pcard3{width:534px;height:236px;object-fit:cover}
+.pcard2{width:808px;height:200px;object-fit:cover}
+.pad{padding:28px 32px 32px;display:flex;flex-direction:column;gap:12px}
+.ph-r{position:absolute;left:1056px;top:0;width:864px;height:1080px;object-fit:cover}
+.ph-box{position:absolute;left:1088px;top:128px;width:704px;height:792px;object-fit:cover;border-radius:12px}
+.bleed{position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:cover}
+.scrim{position:absolute;left:0;top:0;width:1920px;height:1080px;background:linear-gradient(90deg,rgba(15,14,12,0.95) 0%,rgba(15,14,12,0.82) 48%,rgba(15,14,12,0.18) 100%)}
+.inset{position:absolute;left:1312px;top:608px;width:480px;height:312px;object-fit:cover;border-radius:12px;border:2px solid #10262A}
+.phone{width:250px;height:540px;object-fit:cover;border-radius:28px;border:2px solid #E2D8C6}
+.teamimg{width:720px;height:334px;object-fit:cover;border-radius:12px}
+.flogo{position:absolute;left:128px;bottom:64px;width:98px;height:24px;object-fit:contain}
+.pg{position:absolute;left:254px;bottom:64px;width:48px;height:24px;font-size:24px;line-height:24px;font-weight:600;color:#0B6A70}
+.pg::after{content:counter(page)}
+.pgd{position:absolute;left:254px;bottom:64px;width:48px;height:24px;font-size:24px;line-height:24px;font-weight:600;color:#F6F1E7}
+.pgd::after{content:counter(page)}
+.foot{position:absolute;left:302px;bottom:64px;width:700px;font-size:24px;line-height:24px;color:#5F6E6F}
+.footd{position:absolute;left:302px;bottom:64px;width:700px;font-size:24px;line-height:24px;color:#F6F1E7}
+.hb{display:flex;align-items:center;gap:28px}
+.hbl{width:430px;font-size:28px;line-height:1.25;color:#10262A}
+.hbv{font-family:'Inter Tight','Inter',Arial,sans-serif;font-size:36px;font-weight:700;line-height:1;color:#10262A;white-space:nowrap}
+.bar{height:56px;border-radius:6px}
+.bar-s{height:36px;border-radius:6px}
+.bcork{background:#C8935A}
+.bsable{background:#D9C3A0}
+.bteal{background:#0E8C8C}
+.bgrey{background:#9AA5A5}
+.track{height:430px;display:flex;align-items:flex-end;gap:36px}
+.vcol{width:130px;display:flex;flex-direction:column;align-items:center;gap:10px}
+.vbar{width:130px;border-radius:6px 6px 0 0}
+.vval{font-family:'Inter Tight','Inter',Arial,sans-serif;font-size:32px;font-weight:700;line-height:1.1;color:#10262A;text-align:center}
+.vyear{font-size:24px;font-weight:600;line-height:1.2;color:#46585A;text-align:center}
+.vsub{font-size:24px;line-height:1.2;text-align:center;color:#46585A}
+.ck{width:34px;height:34px;color:#0A6F78}
+.li{display:flex;align-items:flex-start;gap:18px}
+.tb{font-size:28px;color:#10262A;width:100%}
+.thr{background:#EAE2D3}
+.scrim2{position:absolute;left:0;top:0;width:1920px;height:1080px;background:linear-gradient(180deg,rgba(15,14,12,0.80) 0%,rgba(15,14,12,0.90) 100%)}
+.cardq{flex:1;min-width:0;background:#FFFDF9;border:1px solid #E2D8C6;border-radius:12px;padding:28px 32px;display:flex;flex-direction:column;gap:10px}
+.thesis{width:500px;background:#0B5560;border-radius:12px;padding:40px;display:flex;flex-direction:column;gap:20px}
+.thesis-h{font-family:'Inter Tight','Inter',Arial,sans-serif;font-size:52px;font-weight:700;line-height:1.08;letter-spacing:-1px;color:#F6F1E7}
+.labd{font-size:24px;font-weight:600;letter-spacing:2px;line-height:1.3;color:#9FD8D3}
+.toc{font-family:'Inter Tight','Inter',Arial,sans-serif;font-size:44px;font-weight:600;line-height:1.2;color:#10262A}
+.thk{background:#0B5560}
+.thd{color:#F6F1E7}
+.grid2r{display:grid;grid-template-columns:repeat(2,1fr);gap:22px 64px}
+.rule{border-top:1px solid #E2D8C6}
+.full{padding:80px 80px 160px}
+.panel{background:#F6F1E7;border-radius:12px;padding:48px;display:flex;flex-direction:column}
+.pw1040{width:1040px}
+.pw760{width:760px}
+.footbg{position:absolute;left:96px;bottom:40px;width:640px;height:72px;background:#F6F1E7;border-radius:12px}
+.sh{text-shadow:0 2px 20px rgba(6,10,16,0.65)}
+.topgap{height:108px}
+.rightcol{width:752px;align-self:flex-end;display:flex;flex-direction:column}
+.band{width:1920px;height:500px;object-fit:cover}
+.banded{padding:0 0 160px}
+.bandc{padding:48px 128px 0;display:flex;flex-direction:column}
+.qrbox{width:200px;height:200px;background:#FFFFFF;border:1px solid #E2D8C6;border-radius:12px;padding:20px;box-sizing:border-box}
+.logos{display:flex;align-items:center;gap:36px}
+.lg-n{width:312px;height:76px;object-fit:contain}
+.lg-k{width:254px;height:80px;object-fit:contain}
+.x{font-family:'Inter Tight','Inter',Arial,sans-serif;font-size:44px;font-weight:500;line-height:1;color:#9C5A1E}
+.fade{animation:fadeup 600ms ease-out both;animation-delay:calc(var(--i) * 120ms)}
+@keyframes fadeup{from{opacity:0;transform:translate(0px,18px)}to{opacity:1;transform:translate(0px,0px)}}
+.rightcol h2,.rightcol h3,.rightcol .ink{color:#FFFDF9}
+.rightcol .ebt,.rightcol .cork{color:#F3D3A6}
+.onphoto h1,.onphoto .lead,.onphoto .ink{color:#FFFDF9}
+.onphoto .small{color:#DDEBEA}
+.onphoto .ebt{color:#F3D3A6}
+.statrow{display:flex;align-items:center;gap:28px}
+.statn{width:320px}
+.band3{width:1920px;height:280px;object-fit:cover}
+.bandc3{padding:40px 128px 0;display:flex;flex-direction:column}
+.w800c{width:800px}
+.bandG{width:1920px;height:760px;object-fit:cover}
+.phone2{width:240px;height:519px;object-fit:cover;border-radius:26px;border:2px solid #E2D8C6}
+.phone3{width:230px;height:498px;object-fit:cover;border-radius:26px;border:2px solid #E2D8C6}
+.wtxt{width:640px}
+.phone2s{width:240px;height:434px;object-fit:cover;border-radius:26px;border:2px solid #E2D8C6}
+.hbl2{width:300px;font-size:28px;line-height:1.25;color:#10262A}
+.wown{width:920px}
+.num5{font-family:'Inter Tight','Inter',Arial,sans-serif;font-size:56px;font-weight:700;line-height:1.05;letter-spacing:-1.5px;color:#0B6A70;white-space:nowrap}
+
+.ph-r2{position:absolute;left:1216px;top:0;width:704px;height:1080px;object-fit:cover}
+.rowh{display:flex;gap:28px}
+.wj{width:420px}
+.hand{width:620px;height:760px}
+.opr{object-position:100% 50%}
+.rowsb{display:flex;justify-content:space-between}
+.wj6{width:800px}
+.sp96{width:96px}
+.act{background:#FFFDF9;border:1px solid #E2D8C6;border-left:6px solid #C8935A;border-radius:12px;padding:20px 28px}
+.dimb{padding:0 34px}
+.dimb h3,.dimb p{color:#A7AEA9}
+.op80{object-position:80% 50%}
+.handA{position:absolute;left:402px;top:40px;width:808px;height:991px}
+.handB{position:absolute;left:968px;top:40px;width:808px;height:991px}
+.wj2{width:440px}
+.pouch{position:absolute;left:856px;top:30px;width:1024px;height:1020px}
+.split{padding:0;flex-direction:row}
+.splitL{flex:1;min-width:0;padding:128px 0 160px 128px;display:flex;flex-direction:column}
+.phf{flex:none;width:864px;height:1080px;object-fit:cover}
+.phf2{width:704px}
+.bgm{position:absolute;left:0;top:0;width:1920px;height:1080px}
+.opb{object-position:50% 100%}
+.t-anchor{background:#D2E9F6}
+.t-burden{background:#F6E9D2}
+.t-promise{background:#F6E4D2}
+.t-j1{background:#F6E4D2}
+.t-j2{background:#D2ECF6}
+.t-j3{background:#F6E4D2}
+.t-j4{background:#F6DFD2}
+.t-j5{background:#F6E4D2}
+.t-j7{background:#F6DAD2}
+.t-korko{background:#F6ECD2}
+.t-house{background:#D7F6D2}
+.t-station{background:#F6E4D2}
+.t-sites{background:#F6EFD2}
+.t-team{background:#F6E7D2}
+.t-pouch{background:#D2E2F6}
+.fs{padding:72px 128px 160px}
+.fsg{position:absolute;left:0;top:0;width:1920px;height:600px;background:linear-gradient(180deg,rgba(6,24,28,0.82) 0%,rgba(6,24,28,0.58) 42%,rgba(6,24,28,0) 100%)}
+.fst{font-family:'Inter Tight','Inter',Arial,sans-serif;font-size:116px;font-weight:700;line-height:1.02;letter-spacing:-3.5px;color:#FFFDF9;text-shadow:0 2px 24px rgba(6,10,16,0.5)}
+.fst88{font-size:92px;letter-spacing:-2.5px}
+.sand,.onphoto .sand{color:#F3D3A6}
+.fsl{font-size:44px;line-height:1.3;color:#FFFDF9;text-shadow:0 2px 20px rgba(6,10,16,0.6)}
+.xl{color:#F3D3A6}
+.mt24{margin-top:24px}
+.mt40{margin-top:40px}
+.mt12{margin-top:14px}
+.t-renting{background:#F6E5D2}
+.phland{flex:none;width:720px;height:540px;object-fit:cover;border-radius:12px}
+.aic{align-items:center}
+.endc{font-size:32px;line-height:1.4;color:#FFFDF9;text-shadow:0 2px 20px rgba(6,10,16,0.6)}
+.endc a{color:#FFFDF9}
+.tlink a{color:#0B6A70}
+.t-try{background:#C7E8F2}
+.phf3{width:960px}
+.w768{width:768px;display:flex;flex-direction:column}
+.qrmid{flex:none;width:300px;height:300px;background:#FFFFFF;border:1px solid #E2D8C6;border-radius:12px;padding:40px;box-sizing:border-box}
+.t-host{background:#C3D7DD}
+.w880{width:880px}
+.seg{flex:1;height:28px;border-radius:14px;border:2px solid #0B6A70}
+.segon{background:#0B6A70}
+.cta{align-self:flex-start;font-size:32px;line-height:1.2;font-weight:700;background:#0B6A70;border-radius:44px;padding:24px 44px;margin-top:12px}
+.cta a{color:#FBF7EE;text-decoration:none}
+.ctat{color:#FBF7EE}
+.cork a{color:#9C5A1E}
+.qrbig{flex:none;width:400px;height:400px;background:#FFFFFF;border:1px solid #E2D8C6;border-radius:12px;padding:40px;box-sizing:border-box}
+</style></head>
+<body>
+<div id="rot"></div>
+<div id="frame"><div id="stage"><section id="en-cover" data-lang="en" data-n="1" style="counter-reset:page 0" class="fs onphoto" data-transition="fade">
+<img loading="lazy" decoding="async" class="bleed" src="assets/2d7672e94fd74d6f6d617b9f652d61c5.jpg" alt="A smiling surfer walking across a wide beach with a KORKO cork board under his arm">
+<div class="fsg"></div>
+<div class="logos"><img loading="lazy" decoding="async" class="lg-n" src="assets/45440c205941907b83a9ecf05949d3c6.svg" alt="NOTOX"><p class="x xl">×</p><img loading="lazy" decoding="async" class="lg-k" src="assets/3509f005bee5c86aac50c9c080da24fb.png" alt="KORKO by NOTOX"></div>
+<h1 class="fst mt24">Surf more, own less.</h1>
+<div class="grow"></div>
+<p class="small sh">KORKO Self-Service · GREEN WAVE SAS · Anglet, French Basque Country</p>
+<div class="langpick"><p class="lpl">Choose your language</p><div class="lpb"><button type="button" data-set="fr">Français</button><button type="button" data-set="en" class="cur">English</button></div></div></section>
+<section id="en-garage" data-lang="en" data-n="2" style="counter-reset:page 1" class="fs" data-transition="fade">
+<img loading="lazy" decoding="async" class="bleed" src="assets/611d618186c19de54963430efd151094.jpg" alt="A garage crammed with surfboards, wetsuits, board bags, boxes and beach chairs">
+<div class="fsg"></div>
+<h1 class="fst">You wanted to surf.</h1>
+<h1 class="fst sand">You got a garage.</h1>
+</section>
+<section id="en-burden" data-lang="en" data-n="3" style="counter-reset:page 2" class="t-burden" data-transition="fade">
+<img loading="lazy" decoding="async" class="bgm" src="assets/5c5d61d72b40cc4e6e83625d675f4e7d.svg" alt="">
+<div class="eb"><x-shape kind="diamond" class="dia"></x-shape><p class="ebt">THE PROBLEM · EVERYTHING AROUND THE SESSION</p></div>
+<h2>Then the board owns you.</h2>
+<div class="row mb28">
+<div class="pcard"><img loading="lazy" decoding="async" class="pcard3" src="assets/889cea00f7d5d46182724f9e3f50d6fe.jpg" alt="Surfboards stacked on wall racks in a garage"><div class="pad"><h3>Store it</h3><p>A garage, if you have one. In town: a hallway, a cellar or a balcony.</p></div></div>
+<div class="pcard"><img loading="lazy" decoding="async" class="pcard3" src="assets/c41e421fea29868e358f50f78d43ae3b.jpg" alt="Gloved hands repairing a ding in a surfboard rail"><div class="pad"><h3>Repair it</h3><p>Dings, wax and sun. Evenings spent with resin, not in the water.</p></div></div>
+<div class="pcard"><img loading="lazy" decoding="async" class="pcard3" src="assets/f7588289a3ce39f522c9b29bd9462627.jpg" alt="A surfer strapping a board onto a car roof rack"><div class="pad"><h3>Carry it</h3><p>Roof bars, a bag, a train or a plane. 54% surf more than 10 km from home.</p></div></div>
+</div>
+<p class="small">Source: Surf Panorama 2026, EuroSIMA and UESC: 2,300 surfers aged 16 and over, mostly experienced.</p>
+<img loading="lazy" decoding="async" class="flogo" src="assets/677f663d790e7ce91b6843edccce87af.svg" alt="NOTOX"><div class="pg"></div><p class="foot">KORKO Self-Service</p>
+</section>
+<section id="en-counter" data-lang="en" data-n="4" style="counter-reset:page 3" data-transition="fade">
+<img loading="lazy" decoding="async" class="bgm" src="assets/5c5d61d72b40cc4e6e83625d675f4e7d.svg" alt="">
+<div class="eb"><x-shape kind="diamond" class="dia"></x-shape><p class="ebt">THE PROBLEM · RENTING TODAY</p></div>
+<h2>So the occasional surfer rents, at a counter.</h2>
+<div class="row mb40">
+<div class="card4"><p class="num3">64%</p><p><b class="ink">Rent, or would.</b> French people who have already rented equipment or would consider it.</p></div>
+<div class="card4"><p class="num3">€10</p><p><b class="ink">For one hour.</b> And €15 for two: the French median, in a shop.</p></div>
+<div class="card4"><p class="num3">Hours</p><p><b class="ink">And a counter.</b> A queue, a booking, often a deposit, while the best waves come at sunrise.</p></div>
+</div>
+<p class="small">Sources: Ifop for Lokki, May 2025 · GREEN WAVE rental price survey of 38 shops, November 2026.</p>
+<img loading="lazy" decoding="async" class="flogo" src="assets/677f663d790e7ce91b6843edccce87af.svg" alt="NOTOX"><div class="pg"></div><p class="foot">KORKO Self-Service</p>
+</section>
+<section id="en-renting" data-lang="en" data-n="5" style="counter-reset:page 4" class="split t-renting" data-transition="fade">
+<img loading="lazy" decoding="async" class="bgm" src="assets/5c5d61d72b40cc4e6e83625d675f4e7d.svg" alt="">
+<div class="splitL">
+<div class="w800">
+<div class="eb"><x-shape kind="diamond" class="dia"></x-shape><p class="ebt">THE PROBLEM · RENTING, IN PRACTICE</p></div>
+<h2 class="mb40">Renting makes sense. It can still go wrong.</h2>
+<div class="g28 mb40">
+<div class="g8"><h3>Damage fees</h3><p>A ding you may not have made, billed on the spot, and argued over on the beach.</p></div>
+<div class="g8"><h3>Tired gear</h3><p>Hidden cracks, weak repairs, a worn leash that gives way mid-session.</p></div>
+<div class="g8"><h3>The wrong board</h3><p>Whatever is left on the rack, whatever the waves that day.</p></div>
+</div>
+<p class="small">What renters most often complain about in online reviews and forums. Accounts, not a survey.</p>
+</div>
+</div>
+<img loading="lazy" decoding="async" class="phf" src="assets/9ad2ca5021906eec6222bbd47e255036.jpg" alt="Rental surfboards stacked upright against a wall beside a street, a man sitting in front of them">
+<img loading="lazy" decoding="async" class="flogo" src="assets/677f663d790e7ce91b6843edccce87af.svg" alt="NOTOX"><div class="pg"></div><p class="foot">KORKO Self-Service</p>
+</section>
+<section id="en-owning" data-lang="en" data-n="6" style="counter-reset:page 5" data-transition="fade">
+<img loading="lazy" decoding="async" class="bgm" src="assets/5c5d61d72b40cc4e6e83625d675f4e7d.svg" alt="">
+<div class="eb"><x-shape kind="diamond" class="dia"></x-shape><p class="ebt">THE PROBLEM · OWNING</p></div>
+<h2>What owning really costs, per session.</h2>
+<div class="row64 mb28">
+<div class="g20 wown">
+<div class="row">
+<div class="card5 grow"><p class="num5">3 boards</p><p class="small">owned on average</p></div>
+<div class="card5 grow"><p class="num5">€635</p><p class="small">average price of the last board bought</p></div>
+<div class="card5 grow"><p class="num5">2 years</p><p class="small">the most common time a board is kept</p></div>
+</div>
+<p><b class="ink">About €525 a year</b>, even with each board resold at half price, before the wetsuit, fins, leash, wax, repairs, storage and transport.</p>
+</div>
+<div class="grow g20">
+<div class="hb"><p class="hbl2">@ 10 sessions a year</p><div class="bar bcork" style="width:200px"></div><p class="hbv">€53</p></div>
+<div class="hb"><p class="hbl2">@ 20 sessions a year</p><div class="bar bsable" style="width:98px"></div><p class="hbv">€26</p></div>
+<div class="hb"><p class="hbl2">@ 40 sessions a year</p><div class="bar bgrey" style="width:49px"></div><p class="hbv">€13</p></div>
+<div class="hb"><p class="hbl2">KORKO, one hour</p><div class="bar bteal" style="width:57px"></div><p class="hbv">€15</p></div>
+</div>
+</div>
+<p class="mb16">These are the habits of surfers who surf regularly and have started to buy. It is what awaits today’s occasional surfers.</p>
+<p class="small">Estimate by GREEN WAVE: three boards at €635 renewed every two years, resale assumed at 50%, plus two basic bags at €50. Source: Surf Panorama 2026, EuroSIMA and UESC, 2,300 surfers aged 16 and over, mostly experienced.</p>
+<img loading="lazy" decoding="async" class="flogo" src="assets/677f663d790e7ce91b6843edccce87af.svg" alt="NOTOX"><div class="pg"></div><p class="foot">KORKO Self-Service</p>
+</section>
+<section id="en-footprint" data-lang="en" data-n="7" style="counter-reset:page 6" data-transition="fade">
+<img loading="lazy" decoding="async" class="bgm" src="assets/5c5d61d72b40cc4e6e83625d675f4e7d.svg" alt="">
+<div class="eb"><x-shape kind="diamond" class="dia"></x-shape><p class="ebt">THE PROBLEM · THE FOOTPRINT</p></div>
+<h2>And what it costs the planet, per session.</h2>
+<div class="row64 mb28">
+<div class="g20 wown">
+<div class="row">
+<div class="card5 grow"><p class="num5">83 kg</p><p class="small">of CO₂e for one conventional board, whole life</p></div>
+<div class="card5 grow"><p class="num5">36 kg</p><p class="small">of CO₂e for one KORKO series board</p></div>
+<div class="card5 grow"><p class="num5">642 h</p><p class="small">a station board is rented over three seasons</p></div>
+</div>
+<p><b class="ink">About 62 kg of CO₂e a year</b> for three conventional boards renewed every two years, counted like their cost: half of each footprint, the board being resold.</p>
+</div>
+<div class="grow g20">
+<div class="hb"><p class="hbl2">@ 10 sessions a year</p><div class="bar bcork" style="width:200px"></div><p class="hbv">6.2 kg</p></div>
+<div class="hb"><p class="hbl2">@ 20 sessions a year</p><div class="bar bsable" style="width:100px"></div><p class="hbv">3.1 kg</p></div>
+<div class="hb"><p class="hbl2">@ 40 sessions a year</p><div class="bar bgrey" style="width:50px"></div><p class="hbv">1.6 kg</p></div>
+<div class="hb"><p class="hbl2">KORKO, one hour</p><div class="bar bteal" style="width:2px"></div><p class="hbv">56 g</p></div>
+</div>
+</div>
+<p class="mb16">A shared board spreads its footprint over hundreds of sessions: about 56 times less CO₂e per session than boards owned and surfed 20 times a year.</p>
+<p class="small">Estimate by GREEN WAVE from the life-cycle assessments by think+ (2022, Ecoinvent 3.8): the board only, from raw materials to end of life; travel to the spot, wetsuit and accessories are not counted. KORKO: 43 kg for the board made in Anglet (2022), less 16.8% for the series board made in Taiwan (think+, 2025, climate change), spread over three six-month seasons at 35.6 rented hours a month, the plan’s occupancy.</p>
+<img loading="lazy" decoding="async" class="flogo" src="assets/677f663d790e7ce91b6843edccce87af.svg" alt="NOTOX"><div class="pg"></div><p class="foot">KORKO Self-Service</p>
+</section>
+<section id="en-anchor" data-lang="en" data-n="8" style="counter-reset:page 7" class="split t-anchor" data-transition="fade">
+<img loading="lazy" decoding="async" class="bgm" src="assets/5c5d61d72b40cc4e6e83625d675f4e7d.svg" alt="">
+<div class="splitL">
+<div class="w1040">
+<div class="eb"><x-shape kind="diamond" class="dia"></x-shape><p class="ebt">THE ANSWER · PRICE</p></div>
+<h2>By the minute: a price people here already pay.</h2>
+<div class="row mb28">
+<div class="card4"><p class="lab">PONY · E-BIKE</p><p class="num4">€0.26</p><p><b class="ink">A minute, plus €1 to unlock.</b> 800 shared bikes, 12 towns.</p></div>
+<div class="card4"><p class="lab">KORKO · BOARD</p><p class="num4">€0.25</p><p><b class="ink">A minute, nothing to unlock.</b> Capped at €49 a day.</p></div>
+<div class="card4"><p class="lab">ONE HOUR</p><p class="num4">€15</p><p><b class="ink">On a KORKO board.</b> €16.60 on the bike.</p></div>
+</div>
+<p class="mb16">Self-service wins for short, occasional use; owning wins for everyday use. KORKO is built for the occasional surfer.</p>
+<p class="small">Pony public fares, Anglet and Hendaye tourist offices, 18 November 2026. Pony is an independent service, with no link to GREEN WAVE. Photo: Pony / Unsplash.</p>
+</div>
+</div>
+<img loading="lazy" decoding="async" class="phf phf2" src="assets/6dc2ca1357cf0b9aa6a3063b8712cb10.jpg" alt="A Pony shared electric bike parked on the seafront in Biarritz, with the Rocher de la Vierge behind">
+<img loading="lazy" decoding="async" class="flogo" src="assets/677f663d790e7ce91b6843edccce87af.svg" alt="NOTOX"><div class="pg"></div><p class="foot">KORKO Self-Service</p>
+</section>
+<section id="en-promise" data-lang="en" data-n="9" style="counter-reset:page 8" class="banded t-promise" data-transition="fade">
+<img loading="lazy" decoding="async" class="bgm" src="assets/5c5d61d72b40cc4e6e83625d675f4e7d.svg" alt="">
+<img loading="lazy" decoding="async" class="band" src="assets/60d249a1f47f789a135403bdb8afd8dc.jpg" alt="A surfer walking toward the waves with a KORKO cork board under his arm">
+<div class="bandc">
+<div class="row64">
+<div style="width:480px" class="col">
+<div class="eb"><x-shape kind="diamond" class="dia"></x-shape><p class="ebt">THE ANSWER</p></div>
+<h1 class="mb28">Surf more, own less.</h1>
+<p>No board to buy, store or carry. It is already there.</p>
+</div>
+<div class="grow g8"><p class="lab">REASONS TO BELIEVE</p><h3>Invented by NOTOX, proven in rescue.</h3><p class="small">A cork board born in the Anglet workshop, used by the Landes lifeguards for around eight years.</p></div>
+<div class="grow g8"><p class="lab">FUNCTIONAL BENEFIT</p><h3>A board waiting near the beach.</h3><p class="small">Rented by the minute, sunrise to sunset. No counter, no key, nothing to install.</p></div>
+<div class="grow g8"><p class="lab">EMOTIONAL BENEFIT</p><h3>The session, without the ownership.</h3><p class="small">Tap, surf, tap back. Like it? Keep it: every station board is for sale.</p></div>
+</div>
+</div>
+<img loading="lazy" decoding="async" class="flogo" src="assets/677f663d790e7ce91b6843edccce87af.svg" alt="NOTOX"><div class="pg"></div><p class="foot">KORKO Self-Service</p>
+</section>
+<section id="en-j1" data-lang="en" data-n="10" style="counter-reset:page 9" class="split t-j1" data-transition="fade">
+<img loading="lazy" decoding="async" class="bgm" src="assets/5c5d61d72b40cc4e6e83625d675f4e7d.svg" alt="">
+<img loading="lazy" decoding="async" class="handA" src="assets/ac38fae6d40e448458b43d8184f772fe.webp" alt="A hand holding a phone. App screen: spots around me by bike or bus, with free boards">
+<div class="splitL">
+<div class="wj2">
+<div class="eb"><x-shape kind="diamond" class="dia"></x-shape><p class="ebt">THE JOURNEY · 1 OF 7</p></div>
+<h2>Arrive with nothing.</h2>
+<div class="g20"><p class="lead">On foot, by bike, by bus or by train. The board is already there, a short walk from the water.</p><p>The app lists the spots less than an hour away without a car, and how to get there.</p></div>
+</div>
+</div>
+<img loading="lazy" decoding="async" class="phf phf2" src="assets/d891ac180fef3ff8aff7d393ac99888d.jpg" alt="A smiling woman with a beach bag walking through a campsite under the pines">
+<img loading="lazy" decoding="async" class="flogo" src="assets/677f663d790e7ce91b6843edccce87af.svg" alt="NOTOX"><div class="pg"></div><p class="foot">KORKO Self-Service</p>
+</section>
+<section id="en-j2" data-lang="en" data-n="11" style="counter-reset:page 10" class="split t-j2" data-transition="fade">
+<img loading="lazy" decoding="async" class="bgm" src="assets/5c5d61d72b40cc4e6e83625d675f4e7d.svg" alt="">
+<img loading="lazy" decoding="async" class="handA" src="assets/5f0c8de645b5c652ef09c44a1d4eb816.webp" alt="A hand holding a phone. App screen: conditions at a spot and boards available">
+<div class="splitL">
+<div class="wj2">
+<div class="eb"><x-shape kind="diamond" class="dia"></x-shape><p class="ebt">THE JOURNEY · 2 OF 7</p></div>
+<h2>Find your spot.</h2>
+<div class="g20"><p class="lead">Swell, wind and tide, spot by spot, in plain words.</p><p>And how many KORKO boards are free on the rack right now.</p></div>
+</div>
+</div>
+<img loading="lazy" decoding="async" class="phf phf2" src="assets/5915cbfec11d8f14fcf410e68668ae0f.jpg" alt="A sandy beach with a jetty, a few people at the water’s edge and a blue sky">
+<img loading="lazy" decoding="async" class="flogo" src="assets/677f663d790e7ce91b6843edccce87af.svg" alt="NOTOX"><div class="pg"></div><p class="foot">KORKO Self-Service</p>
+</section>
+<section id="en-j3" data-lang="en" data-n="12" style="counter-reset:page 11" class="split t-j3" data-transition="fade">
+<img loading="lazy" decoding="async" class="bgm" src="assets/5c5d61d72b40cc4e6e83625d675f4e7d.svg" alt="">
+<img loading="lazy" decoding="async" class="handA" src="assets/8082babee0bae000f0a79ba7623a238a.webp" alt="A hand holding a phone. App screen: bring your phone to the badge, €0.25 a minute">
+<div class="splitL">
+<div class="wj2">
+<div class="eb"><x-shape kind="diamond" class="dia"></x-shape><p class="ebt">THE JOURNEY · 3 OF 7</p></div>
+<h2>Tap the board.</h2>
+<div class="g20"><p class="lead">Phone on the board’s badge, then Apple Pay or Google Pay.</p><p>Paying clears the board to move. No lock, no key: moved without a session, it sounds its alarm. Nothing to install, no deposit.</p></div>
+</div>
+</div>
+<img loading="lazy" decoding="async" class="phf phf2 opr" src="assets/723180f96fb3d1e322ea76da8fa06778.jpg" alt="A smiling surfer holding a KORKO cork board and her phone on a dune path at sunset" style="transform:rotate(0deg);filter:blur(0);backdrop-filter:blur(0)">
+<img loading="lazy" decoding="async" class="flogo" src="assets/677f663d790e7ce91b6843edccce87af.svg" alt="NOTOX"><div class="pg"></div><p class="foot">KORKO Self-Service</p>
+</section>
+<section id="en-j4" data-lang="en" data-n="13" style="counter-reset:page 12" class="split t-j4" data-transition="fade">
+<img loading="lazy" decoding="async" class="bgm" src="assets/5c5d61d72b40cc4e6e83625d675f4e7d.svg" alt="">
+<div class="splitL">
+<div class="w800">
+<div class="eb"><x-shape kind="diamond" class="dia"></x-shape><p class="ebt">THE JOURNEY · 4 OF 7</p></div>
+<h2>Surf.</h2>
+<div class="g20"><div class="g8"><p class="num cork">€0.25</p><p class="lab">A MINUTE</p></div><p class="lead">Never more than €49 a day, or €99 over 7 days.</p><p>From sunrise to sunset: the rack has no opening hours. Wetsuits are available at the host.</p></div>
+</div>
+</div>
+<img loading="lazy" decoding="async" class="phf" src="assets/a1b473a0ae49ed31aecca211b0708672.jpg" alt="A surfer in a green swimsuit riding a small wave on a KORKO cork board">
+<img loading="lazy" decoding="async" class="flogo" src="assets/677f663d790e7ce91b6843edccce87af.svg" alt="NOTOX"><div class="pg"></div><p class="foot">KORKO Self-Service</p>
+</section>
+<section id="en-j5" data-lang="en" data-n="14" style="counter-reset:page 13" class="split t-j5" data-transition="fade">
+<img loading="lazy" decoding="async" class="bgm" src="assets/5c5d61d72b40cc4e6e83625d675f4e7d.svg" alt="">
+<div class="splitL">
+<div class="w800">
+<div class="eb"><x-shape kind="diamond" class="dia"></x-shape><p class="ebt">THE JOURNEY · 5 OF 7</p></div>
+<h2>Tap back. Walk away.</h2>
+<div class="g20"><p class="lead">The session closes and the payment leaves by itself.</p><p>Nothing to rinse, nothing to repair, nothing to store, nothing to carry home.</p></div>
+</div>
+</div>
+<img loading="lazy" decoding="async" class="phf" src="assets/ad0345dda96feda68459d151eb88adcd.jpg" alt="A surfer putting a KORKO board back on its rack at sunset">
+<img loading="lazy" decoding="async" class="flogo" src="assets/677f663d790e7ce91b6843edccce87af.svg" alt="NOTOX"><div class="pg"></div><p class="foot">KORKO Self-Service</p>
+</section>
+<section id="en-j6" data-lang="en" data-n="15" style="counter-reset:page 14" data-transition="fade">
+<img loading="lazy" decoding="async" class="bgm" src="assets/5c5d61d72b40cc4e6e83625d675f4e7d.svg" alt="">
+<img loading="lazy" decoding="async" class="handB" src="assets/8916faf2464f289b628e75c6754e8634.webp" alt="A hand holding a phone. App screen: tubes balance and what they can be exchanged for">
+<div class="wj6">
+<div class="eb"><x-shape kind="diamond" class="dia"></x-shape><p class="ebt">THE JOURNEY · 6 OF 7</p></div>
+<h2>Come back: the app gives reasons to.</h2>
+<div class="g12 mb16">
+<div class="act g8"><h3>Tubes</h3><p>Loyalty points, earned through challenges, for reporting damage or bringing back a stray board. Spent on free minutes or a coffee nearby.</p></div>
+<div class="dimb g8"><h3>Challenges</h3><p>Two or three, always optional. When the sea is dangerous, there are none.</p></div>
+<div class="dimb g8"><h3>The season so far</h3><p>Sessions surfed without owning, storing or carrying a board.</p></div>
+</div>
+<p class="small">Demo app, French version; contents shown are examples.</p>
+</div>
+<img loading="lazy" decoding="async" class="flogo" src="assets/677f663d790e7ce91b6843edccce87af.svg" alt="NOTOX"><div class="pg"></div><p class="foot">KORKO Self-Service</p>
+</section>
+<section id="en-j6b" data-lang="en" data-n="16" style="counter-reset:page 15" data-transition="fade">
+<img loading="lazy" decoding="async" class="bgm" src="assets/5c5d61d72b40cc4e6e83625d675f4e7d.svg" alt="">
+<img loading="lazy" decoding="async" class="handB" src="assets/147698d9072ea71d80303af4c8ed2163.webp" alt="A hand holding a phone. App screen: today’s optional challenges and the tubes they earn">
+<div class="wj6">
+<div class="eb"><x-shape kind="diamond" class="dia"></x-shape><p class="ebt">THE JOURNEY · 6 OF 7</p></div>
+<h2>Come back: the app gives reasons to.</h2>
+<div class="g12 mb16">
+<div class="dimb g8"><h3>Tubes</h3><p>Loyalty points, earned through challenges, for reporting damage or bringing back a stray board. Spent on free minutes or a coffee nearby.</p></div>
+<div class="act g8"><h3>Challenges</h3><p>Two or three, always optional. When the sea is dangerous, there are none.</p></div>
+<div class="dimb g8"><h3>The season so far</h3><p>Sessions surfed without owning, storing or carrying a board.</p></div>
+</div>
+<p class="small">Demo app, French version; contents shown are examples.</p>
+</div>
+<img loading="lazy" decoding="async" class="flogo" src="assets/677f663d790e7ce91b6843edccce87af.svg" alt="NOTOX"><div class="pg"></div><p class="foot">KORKO Self-Service</p>
+</section>
+<section id="en-j6c" data-lang="en" data-n="17" style="counter-reset:page 16" data-transition="fade">
+<img loading="lazy" decoding="async" class="bgm" src="assets/5c5d61d72b40cc4e6e83625d675f4e7d.svg" alt="">
+<img loading="lazy" decoding="async" class="handB" src="assets/c32a8ec38a651fb86c8dcd9d2f95295d.webp" alt="A hand holding a phone. App screen: sessions this season without owning a board">
+<div class="wj6">
+<div class="eb"><x-shape kind="diamond" class="dia"></x-shape><p class="ebt">THE JOURNEY · 6 OF 7</p></div>
+<h2>Come back: the app gives reasons to.</h2>
+<div class="g12 mb16">
+<div class="dimb g8"><h3>Tubes</h3><p>Loyalty points, earned through challenges, for reporting damage or bringing back a stray board. Spent on free minutes or a coffee nearby.</p></div>
+<div class="dimb g8"><h3>Challenges</h3><p>Two or three, always optional. When the sea is dangerous, there are none.</p></div>
+<div class="act g8"><h3>The season so far</h3><p>Sessions surfed without owning, storing or carrying a board.</p></div>
+</div>
+<p class="small">Demo app, French version; contents shown are examples.</p>
+</div>
+<img loading="lazy" decoding="async" class="flogo" src="assets/677f663d790e7ce91b6843edccce87af.svg" alt="NOTOX"><div class="pg"></div><p class="foot">KORKO Self-Service</p>
+</section>
+<section id="en-j7" data-lang="en" data-n="18" style="counter-reset:page 17" class="split t-j7" data-transition="fade">
+<img loading="lazy" decoding="async" class="bgm" src="assets/5c5d61d72b40cc4e6e83625d675f4e7d.svg" alt="">
+<img loading="lazy" decoding="async" class="handA" src="assets/5e25ae174db57d3f4498ca0798ad6c24.webp" alt="A hand holding a phone. App screen: boards I follow and their falling price">
+<div class="splitL">
+<div class="wj2">
+<div class="eb"><x-shape kind="diamond" class="dia"></x-shape><p class="ebt">THE JOURNEY · 7 OF 7</p></div>
+<h2>Like it?<br>Keep it.</h2>
+<div class="g20"><p class="lead">Every station board is for sale, and its price falls with each rental.</p><div class="row"><div class="grow g8"><p class="num2 cork">€690</p><p class="small">new</p></div><div class="grow g8"><p class="num2">€250</p><p class="small">the floor</p></div></div><p>Follow a board, use your tubes, buy it. A board not returned is a board bought.</p></div>
+</div>
+</div>
+<img loading="lazy" decoding="async" class="phf phf2 op80" src="assets/bda12adae3fdfafb8285339ea6ffca6e.jpg" alt="A smiling surfer carrying a KORKO cork board on the beach">
+<img loading="lazy" decoding="async" class="flogo" src="assets/677f663d790e7ce91b6843edccce87af.svg" alt="NOTOX"><div class="pg"></div><p class="foot">KORKO Self-Service</p>
+</section>
+<section id="en-try" data-lang="en" data-n="19" style="counter-reset:page 18" class="split t-j7" data-transition="fade">
+<img loading="lazy" decoding="async" class="bgm" src="assets/5c5d61d72b40cc4e6e83625d675f4e7d.svg" alt="">
+<div class="splitL">
+<div class="w768">
+<div class="eb"><x-shape kind="diamond" class="dia"></x-shape><p class="ebt">TRY IT NOW</p></div>
+<h2 class="mb16">As if you were there.</h2>
+<p class="lead mb40">Try the guided customer journey on your own phone.</p>
+<div class="row mb28 aic">
+<div class="qrmid"><svg viewBox="0 0 33 33" width="220" height="220" role="img" aria-label="QR code opening the KORKO demo" shape-rendering="crispEdges"><path stroke="#1C1A17" fill="none" d="M2 2.5h7M10 2.5h1M15 2.5h1M19 2.5h1M24 2.5h7M2 3.5h1M8 3.5h1M10 3.5h1M13 3.5h1M15 3.5h2M19 3.5h1M21 3.5h1M24 3.5h1M30 3.5h1M2 4.5h1M4 4.5h3M8 4.5h1M10 4.5h2M15 4.5h1M17 4.5h2M20 4.5h3M24 4.5h1M26 4.5h3M30 4.5h1M2 5.5h1M4 5.5h3M8 5.5h1M11 5.5h2M14 5.5h3M19 5.5h4M24 5.5h1M26 5.5h3M30 5.5h1M2 6.5h1M4 6.5h3M8 6.5h1M10 6.5h2M13 6.5h1M15 6.5h2M18 6.5h2M21 6.5h2M24 6.5h1M26 6.5h3M30 6.5h1M2 7.5h1M8 7.5h1M12 7.5h5M19 7.5h2M22 7.5h1M24 7.5h1M30 7.5h1M2 8.5h7M10 8.5h1M12 8.5h1M14 8.5h1M16 8.5h1M18 8.5h1M20 8.5h1M22 8.5h1M24 8.5h7M12 9.5h2M15 9.5h1M21 9.5h2M2 10.5h1M5 10.5h8M15 10.5h1M17 10.5h4M22 10.5h2M26 10.5h1M28 10.5h3M2 11.5h5M9 11.5h2M13 11.5h5M21 11.5h1M25 11.5h2M28 11.5h2M4 12.5h1M6 12.5h1M8 12.5h1M10 12.5h1M12 12.5h1M14 12.5h2M17 12.5h1M19 12.5h2M24 12.5h1M28 12.5h1M5 13.5h1M9 13.5h2M12 13.5h4M17 13.5h1M19 13.5h1M22 13.5h2M25 13.5h1M27 13.5h1M30 13.5h1M3 14.5h1M7 14.5h4M13 14.5h3M18 14.5h1M20 14.5h6M30 14.5h1M3 15.5h5M11 15.5h1M15 15.5h3M19 15.5h2M24 15.5h7M2 16.5h1M4 16.5h2M8 16.5h1M11 16.5h2M14 16.5h2M17 16.5h1M19 16.5h1M21 16.5h1M28 16.5h1M30 16.5h1M2 17.5h1M4 17.5h4M9 17.5h2M12 17.5h2M18 17.5h1M20 17.5h2M23 17.5h2M26 17.5h1M28 17.5h1M30 17.5h1M5 18.5h5M11 18.5h1M16 18.5h1M18 18.5h1M21 18.5h2M27 18.5h1M2 19.5h1M4 19.5h1M6 19.5h1M12 19.5h2M15 19.5h3M20 19.5h3M26 19.5h1M28 19.5h2M2 20.5h3M6 20.5h3M10 20.5h1M12 20.5h1M17 20.5h2M21 20.5h3M27 20.5h1M30 20.5h1M2 21.5h2M5 21.5h3M9 21.5h1M12 21.5h3M16 21.5h3M20 21.5h1M22 21.5h1M24 21.5h2M27 21.5h2M2 22.5h3M8 22.5h2M12 22.5h1M14 22.5h6M21 22.5h9M10 23.5h3M16 23.5h2M20 23.5h3M26 23.5h2M2 24.5h7M10 24.5h2M13 24.5h1M16 24.5h4M21 24.5h2M24 24.5h1M26 24.5h2M2 25.5h1M8 25.5h1M10 25.5h2M16 25.5h1M18 25.5h2M21 25.5h2M26 25.5h1M2 26.5h1M4 26.5h3M8 26.5h1M10 26.5h2M13 26.5h1M15 26.5h2M18 26.5h1M21 26.5h7M30 26.5h1M2 27.5h1M4 27.5h3M8 27.5h1M10 27.5h1M12 27.5h2M15 27.5h1M17 27.5h2M22 27.5h2M30 27.5h1M2 28.5h1M4 28.5h3M8 28.5h1M12 28.5h3M16 28.5h3M23 28.5h1M25 28.5h2M28 28.5h3M2 29.5h1M8 29.5h1M12 29.5h1M14 29.5h3M20 29.5h2M23 29.5h1M25 29.5h1M27 29.5h2M30 29.5h1M2 30.5h7M10 30.5h1M12 30.5h1M14 30.5h1M16 30.5h1M21 30.5h2M24 30.5h2"/></svg></div>
+<div class="grow g20">
+<p>Nine steps: find a spot, rent in two gestures, surf, tap back, and watch the price of your board fall.</p>
+<p class="small">A simulated journey, in French. Nothing to install.</p>
+</div>
+</div>
+<p class="cta mb16"><a href="https://korko-journey-v11.netlify.app/">Scan the code, or tap here to start →</a></p>
+<p class="small cork"><a href="https://korko-journey-v11.netlify.app/">korko-journey-v11.netlify.app</a></p>
+</div>
+</div>
+<img loading="lazy" decoding="async" class="phf phf3" src="assets/ef0faa35a6c738c56b27cfe22b36329f.jpg" alt="A smiling surfer on the beach holding a KORKO cork board across his arms, the ocean behind him">
+<img loading="lazy" decoding="async" class="flogo" src="assets/677f663d790e7ce91b6843edccce87af.svg" alt="NOTOX"><div class="pg"></div><p class="foot">KORKO Self-Service</p>
+</section>
+<section id="en-pouch" data-lang="en" data-n="20" style="counter-reset:page 19" class="t-pouch" data-transition="fade">
+<img loading="lazy" decoding="async" class="bgm" src="assets/5c5d61d72b40cc4e6e83625d675f4e7d.svg" alt="">
+<img loading="lazy" decoding="async" class="pouch" src="assets/32bcf3f329e408cd9a3c496b7b20cceb.webp" alt="A clear waterproof phone pouch with a black KORKO by NOTOX closure and a navy cord">
+<div class="w800">
+<div class="eb"><x-shape kind="diamond" class="dia"></x-shape><p class="ebt">THE JOURNEY · THE PHONE</p></div>
+<h2>The phone is key to the experience. It should never be a worry.</h2>
+<div class="g8 mb28"><p class="num cork">€15</p><p class="lab">THE WATERPROOF POUCH</p></div>
+<p class="lead mb40 wtxt">Open your account ahead, buy the pouch, and one free hour of surf comes with it.</p>
+<p class="small">Concept visual.</p>
+</div>
+<img loading="lazy" decoding="async" class="flogo" src="assets/677f663d790e7ce91b6843edccce87af.svg" alt="NOTOX"><div class="pg"></div><p class="foot">KORKO Self-Service</p>
+</section>
+<section id="en-tough" data-lang="en" data-n="21" style="counter-reset:page 20" class="fs" data-transition="fade">
+<video class="bleed" muted loop playsinline preload="none" poster="assets/0f1b3869bf4fbddfb205767829a24059.jpg"><source src="assets/tough.mp4" type="video/mp4"></video>
+<div class="fsg"></div>
+<h1 class="fst">Are the boards tough enough?</h1>
+<h1 class="fst sand">We do think so.</h1>
+</section>
+<section id="en-korko" data-lang="en" data-n="22" style="counter-reset:page 21" class="split t-korko" data-transition="fade">
+<img loading="lazy" decoding="async" class="bgm" src="assets/5c5d61d72b40cc4e6e83625d675f4e7d.svg" alt="">
+<div class="splitL">
+<div class="w880">
+<div class="eb"><x-shape kind="diamond" class="dia"></x-shape><p class="ebt">WHY IT WORKS · THE BOARD</p></div>
+<h2>Proven in rescue for around eight years.</h2>
+<p class="lead mb40">Developed in the NOTOX workshop nearly ten years ago, the cork board has served the lifeguards of the Landes coast in real rescues. A board that holds there holds in self-service.</p>
+<div class="grid2 mb28">
+<p><b class="ink">No wax.</b> Cork grips wet or dry.</p>
+<p><b class="ink">Repairable.</b> A knock is simply patched.</p>
+<p><b class="ink">Sun-proof.</b> Unaffected by extreme heat.</p>
+<p><b class="ink">Proprietary.</b> A cork not on the market.</p>
+</div>
+<p class="small">700+ handmade KORKO sold since 2017. Now made in series: €690 incl. VAT, fins included.</p>
+</div>
+</div>
+<img loading="lazy" decoding="async" class="phf" src="assets/846a80a3a87b876c58e9b13548da2a69.jpg" alt="Three lifeguards on a boardwalk above a Landes beach with a NOTOX cork rescue board">
+<img loading="lazy" decoding="async" class="flogo" src="assets/677f663d790e7ce91b6843edccce87af.svg" alt="NOTOX"><div class="pg"></div><p class="foot">KORKO Self-Service</p>
+</section>
+<section id="en-where" data-lang="en" data-n="23" style="counter-reset:page 22" data-transition="fade">
+<img loading="lazy" decoding="async" class="bgm" src="assets/5c5d61d72b40cc4e6e83625d675f4e7d.svg" alt="">
+<div class="eb"><x-shape kind="diamond" class="dia"></x-shape><p class="ebt">WHAT’S NEXT · WHERE AND WHEN</p></div>
+<h2>Three pilot stations, summer 2027.</h2>
+<div class="row mb40">
+<div class="card4"><p class="lab">NOW</p><h3>Building the MVP</h3><p>Funding the development of working prototypes: the board beacons, the app, and the back office that supervises the stations.</p></div>
+<div class="card4"><p class="lab">MARCH 2027</p><h3>The boards land</h3><p>The first series of KORKO cork boards arrives from Taiwan.</p></div>
+<div class="card4"><p class="lab">SUMMER 2027</p><h3>Three stations open</h3><p>At campsites, surf camps and leisure sites close to the beach, on the French Atlantic coast.</p></div>
+</div>
+<p class="lab mb16">PILOT SITES SIGNED · 1 OF 3</p>
+<div class="row mb16"><div class="seg segon"></div><div class="seg"></div><div class="seg"></div></div>
+<div class="row"><p class="grow"><b class="ink">Saint-Pierre-d’Oléron.</b> Signed.</p><p class="grow">Site 2. Still to unlock.</p><p class="grow">Site 3. Still to unlock.</p></div>
+<img loading="lazy" decoding="async" class="flogo" src="assets/677f663d790e7ce91b6843edccce87af.svg" alt="NOTOX"><div class="pg"></div><p class="foot">KORKO Self-Service</p>
+</section>
+<section id="en-hostq" data-lang="en" data-n="24" style="counter-reset:page 23" class="fs onphoto" data-transition="fade">
+<img loading="lazy" decoding="async" class="bleed" src="assets/8e5bcd781d579bff02f52d70ed4ef99b.jpg" alt="A young site manager at his beach-side reception desk, pen in hand, looking puzzled at the visitor across the counter">
+<div class="fsg"></div>
+<div class="eb"><x-shape kind="diamond" class="dia"></x-shape><p class="ebt">WHAT IT MEANS FOR HOST PARTNERS</p></div>
+<h1 class="fst fst88 w880">Wait. It costs me nothing…</h1>
+<h1 class="fst fst88 w880">…and it pays me?</h1>
+</section>
+<section id="en-host" data-lang="en" data-n="25" style="counter-reset:page 24" class="t-host" data-transition="fade">
+<img loading="lazy" decoding="async" class="bgm" src="assets/b8caa2ba2c445773f033c3f3ecb41f85.svg" alt="">
+<div class="eb"><x-shape kind="diamond" class="dia"></x-shape><p class="ebt">FOR THE SITES THAT HOST A STATION</p></div>
+<h2>Hosts pay nothing and earn a share of every rental.</h2>
+<div class="row mb40">
+<div class="card4"><p class="num3">€0</p><h3>to pay</h3><p>Boards, rack, installation and upkeep are on us. <b class="ink">No hidden costs.</b></p></div>
+<div class="card4"><p class="num3">15%</p><h3>of every rental</h3><p>Of the station’s rental revenue, excluding VAT.</p></div>
+<div class="card4"><p class="num3">≈ €7.8k</p><h3>per season</h3><p>Example: a campsite with one station at cruising pace.</p></div>
+<div class="card4"><p class="num3">1</p><h3>spot to provide</h3><p>Near the beach access. No power, no staff, no till.</p></div>
+</div>
+<h3 class="mb16"><a class="hl" href="mailto:pierre@notoxsurf.com?subject=KORKO%20Self-Service">You have a site? Get in touch. →</a></h3>
+<p class="small">Example from the reference scenario of the KORKO plan: 15% of €52.2k of rental revenue excluding VAT. The 2027 pilot will measure the real figures.</p>
+<img loading="lazy" decoding="async" class="flogo" src="assets/677f663d790e7ce91b6843edccce87af.svg" alt="NOTOX"><div class="pg"></div><p class="foot">KORKO Self-Service</p>
+</section>
+<section id="en-end" data-lang="en" data-n="26" style="counter-reset:page 25" class="fs onphoto" data-transition="fade">
+<img loading="lazy" decoding="async" class="bleed" src="assets/d9f4cfa5e8c103a89b38ed5f132cfc06.jpg" alt="Aerial view of a surfer paddling a KORKO cork board on open blue water">
+<div class="fsg"></div>
+<h1 class="fst">Leave the garage.</h1>
+<h1 class="fst sand">Free your surfing.</h1>
+<div class="grow"></div>
+<p class="fsl"><b>Let’s talk.</b></p>
+<p class="endc">Pierre Pomiers</p>
+<p class="endc mb40"><a href="mailto:pierre@notoxsurf.com">pierre@notoxsurf.com</a> · <a href="tel:+33679872367">+33 6 79 87 23 67</a></p>
+<div class="logos"><img loading="lazy" decoding="async" class="lg-n" src="assets/45440c205941907b83a9ecf05949d3c6.svg" alt="NOTOX"><p class="x xl">×</p><img loading="lazy" decoding="async" class="lg-k" src="assets/3509f005bee5c86aac50c9c080da24fb.png" alt="KORKO by NOTOX"></div>
+<p class="small sh mt24">KORKO Self-Service · Summer 2027 · French Atlantic coast</p>
+</section>
+<section id="fr-cover" data-lang="fr" data-n="1" style="counter-reset:page 0" class="fs onphoto" data-transition="fade">
+<img loading="lazy" decoding="async" class="bleed" src="assets/2d7672e94fd74d6f6d617b9f652d61c5.jpg" alt="A smiling surfer walking across a wide beach with a KORKO cork board under his arm">
+<div class="fsg"></div>
+<div class="logos"><img loading="lazy" decoding="async" class="lg-n" src="assets/45440c205941907b83a9ecf05949d3c6.svg" alt="NOTOX"><p class="x xl">×</p><img loading="lazy" decoding="async" class="lg-k" src="assets/3509f005bee5c86aac50c9c080da24fb.png" alt="KORKO by NOTOX"></div>
+<h1 class="fst mt24">Surfer plus, posséder moins.</h1>
+<div class="grow"></div>
+<p class="small sh">KORKO Self-Service · GREEN WAVE SAS · Anglet, Pays basque</p>
+<div class="langpick"><p class="lpl">Choisissez votre langue</p><div class="lpb"><button type="button" data-set="fr" class="cur">Français</button><button type="button" data-set="en">English</button></div></div></section>
+<section id="fr-garage" data-lang="fr" data-n="2" style="counter-reset:page 1" class="fs" data-transition="fade">
+<img loading="lazy" decoding="async" class="bleed" src="assets/611d618186c19de54963430efd151094.jpg" alt="A garage crammed with surfboards, wetsuits, board bags, boxes and beach chairs">
+<div class="fsg"></div>
+<h1 class="fst">Vous vouliez surfer.</h1>
+<h1 class="fst sand">Vous avez hérité d’un garage.</h1>
+</section>
+<section id="fr-burden" data-lang="fr" data-n="3" style="counter-reset:page 2" class="t-burden" data-transition="fade">
+<img loading="lazy" decoding="async" class="bgm" src="assets/5c5d61d72b40cc4e6e83625d675f4e7d.svg" alt="">
+<div class="eb"><x-shape kind="diamond" class="dia"></x-shape><p class="ebt">LE PROBLÈME · TOUT CE QUI ENTOURE LA SESSION</p></div>
+<h2>Et c’est la planche qui vous possède.</h2>
+<div class="row mb28">
+<div class="pcard"><img loading="lazy" decoding="async" class="pcard3" src="assets/889cea00f7d5d46182724f9e3f50d6fe.jpg" alt="Surfboards stacked on wall racks in a garage"><div class="pad"><h3>La ranger</h3><p>Un garage, quand on en a un. En ville, c’est le couloir, la cave ou le balcon.</p></div></div>
+<div class="pcard"><img loading="lazy" decoding="async" class="pcard3" src="assets/c41e421fea29868e358f50f78d43ae3b.jpg" alt="Gloved hands repairing a ding in a surfboard rail"><div class="pad"><h3>La réparer</h3><p>Des pocs, de la wax, du soleil. Et des soirées le nez dans la résine plutôt que dans l’eau.</p></div></div>
+<div class="pcard"><img loading="lazy" decoding="async" class="pcard3" src="assets/f7588289a3ce39f522c9b29bd9462627.jpg" alt="A surfer strapping a board onto a car roof rack"><div class="pad"><h3>La transporter</h3><p>Barres de toit, housse, train ou avion. 54 % surfent à plus de 10 km de chez eux.</p></div></div>
+</div>
+<p class="small">Source : Surf Panorama 2026, EuroSIMA et UESC : 2 300 surfeurs de 16 ans et plus, surtout expérimentés.</p>
+<img loading="lazy" decoding="async" class="flogo" src="assets/677f663d790e7ce91b6843edccce87af.svg" alt="NOTOX"><div class="pg"></div><p class="foot">KORKO Self-Service</p>
+</section>
+<section id="fr-counter" data-lang="fr" data-n="4" style="counter-reset:page 3" data-transition="fade">
+<img loading="lazy" decoding="async" class="bgm" src="assets/5c5d61d72b40cc4e6e83625d675f4e7d.svg" alt="">
+<div class="eb"><x-shape kind="diamond" class="dia"></x-shape><p class="ebt">LE PROBLÈME · LOUER AUJOURD’HUI</p></div>
+<h2>Alors, quand on surfe peu, on loue. Au comptoir.</h2>
+<div class="row mb40">
+<div class="card4"><p class="num3">64 %</p><p><b class="ink">Déjà loué, ou prêts à le faire.</b> C’est la part des Français qui ont loué du matériel ou l’envisagent.</p></div>
+<div class="card4"><p class="num3">10 €</p><p><b class="ink">L’heure.</b> Et 15 € les deux heures : le prix médian en boutique, en France.</p></div>
+<div class="card4"><p class="num3">Des horaires</p><p><b class="ink">Et un comptoir.</b> La queue, la réservation, souvent une caution. Et les meilleures vagues, elles, arrivent au lever du jour.</p></div>
+</div>
+<p class="small">Sources : Ifop pour Lokki, mai 2025 · relevé GREEN WAVE des prix de location dans 38 boutiques, novembre 2026.</p>
+<img loading="lazy" decoding="async" class="flogo" src="assets/677f663d790e7ce91b6843edccce87af.svg" alt="NOTOX"><div class="pg"></div><p class="foot">KORKO Self-Service</p>
+</section>
+<section id="fr-renting" data-lang="fr" data-n="5" style="counter-reset:page 4" class="split t-renting" data-transition="fade">
+<img loading="lazy" decoding="async" class="bgm" src="assets/5c5d61d72b40cc4e6e83625d675f4e7d.svg" alt="">
+<div class="splitL">
+<div class="w800">
+<div class="eb"><x-shape kind="diamond" class="dia"></x-shape><p class="ebt">LE PROBLÈME · LA LOCATION, EN PRATIQUE</p></div>
+<h2 class="mb40">Louer, c’est logique. Mais ça peut mal tourner.</h2>
+<div class="g28 mb40">
+<div class="g8"><h3>Frais de casse</h3><p>Un poc que vous n’avez peut-être pas fait, facturé sur place, et la discussion qui suit sur la plage.</p></div>
+<div class="g8"><h3>Matériel fatigué</h3><p>Fissures invisibles, réparations bâclées, leash usé qui lâche en pleine session.</p></div>
+<div class="g8"><h3>La mauvaise planche</h3><p>Celle qui reste sur le rack, quelles que soient les vagues du jour.</p></div>
+</div>
+<p class="small">Les reproches qui reviennent le plus dans les avis en ligne et sur les forums. Des témoignages, pas une enquête.</p>
+</div>
+</div>
+<img loading="lazy" decoding="async" class="phf" src="assets/9ad2ca5021906eec6222bbd47e255036.jpg" alt="Rental surfboards stacked upright against a wall beside a street, a man sitting in front of them">
+<img loading="lazy" decoding="async" class="flogo" src="assets/677f663d790e7ce91b6843edccce87af.svg" alt="NOTOX"><div class="pg"></div><p class="foot">KORKO Self-Service</p>
+</section>
+<section id="fr-owning" data-lang="fr" data-n="6" style="counter-reset:page 5" data-transition="fade">
+<img loading="lazy" decoding="async" class="bgm" src="assets/5c5d61d72b40cc4e6e83625d675f4e7d.svg" alt="">
+<div class="eb"><x-shape kind="diamond" class="dia"></x-shape><p class="ebt">LE PROBLÈME · POSSÉDER</p></div>
+<h2>Posséder : ce que ça coûte vraiment, par session.</h2>
+<div class="row64 mb28">
+<div class="g20 wown">
+<div class="row">
+<div class="card5 grow"><p class="num5">3 boards</p><p class="small">possédées en moyenne</p></div>
+<div class="card5 grow"><p class="num5">635 €</p><p class="small">prix moyen de la dernière planche achetée</p></div>
+<div class="card5 grow"><p class="num5">2 ans</p><p class="small">le temps qu’on garde le plus souvent une planche</p></div>
+</div>
+<p><b class="ink">Environ 525 € par an</b>, même en revendant chaque planche moitié prix. Et sans compter la combinaison, les dérives, le leash, la wax, les réparations, le rangement et le transport.</p>
+</div>
+<div class="grow g20">
+<div class="hb"><p class="hbl2">@ 10 sessions par an</p><div class="bar bcork" style="width:200px"></div><p class="hbv">53 €</p></div>
+<div class="hb"><p class="hbl2">@ 20 sessions par an</p><div class="bar bsable" style="width:98px"></div><p class="hbv">26 €</p></div>
+<div class="hb"><p class="hbl2">@ 40 sessions par an</p><div class="bar bgrey" style="width:49px"></div><p class="hbv">13 €</p></div>
+<div class="hb"><p class="hbl2">KORKO, une heure</p><div class="bar bteal" style="width:57px"></div><p class="hbv">15 €</p></div>
+</div>
+</div>
+<p class="mb16">Ce sont les habitudes de surfeurs réguliers, déjà passés à l’achat. C’est ce qui attend le surfeur occasionnel d’aujourd’hui.</p>
+<p class="small">Estimation GREEN WAVE : trois planches à 635 € renouvelées tous les deux ans, revente supposée à 50 %, plus deux housses simples à 50 €. Source : Surf Panorama 2026, EuroSIMA et UESC, 2 300 surfeurs de 16 ans et plus, surtout expérimentés.</p>
+<img loading="lazy" decoding="async" class="flogo" src="assets/677f663d790e7ce91b6843edccce87af.svg" alt="NOTOX"><div class="pg"></div><p class="foot">KORKO Self-Service</p>
+</section>
+<section id="fr-footprint" data-lang="fr" data-n="7" style="counter-reset:page 6" data-transition="fade">
+<img loading="lazy" decoding="async" class="bgm" src="assets/5c5d61d72b40cc4e6e83625d675f4e7d.svg" alt="">
+<div class="eb"><x-shape kind="diamond" class="dia"></x-shape><p class="ebt">LE PROBLÈME · L’EMPREINTE</p></div>
+<h2>Et ce que ça coûte à la planète, par session.</h2>
+<div class="row64 mb28">
+<div class="g20 wown">
+<div class="row">
+<div class="card5 grow"><p class="num5">83 kg</p><p class="small">de CO₂e pour une planche classique, vie entière</p></div>
+<div class="card5 grow"><p class="num5">36 kg</p><p class="small">de CO₂e pour une KORKO de série</p></div>
+<div class="card5 grow"><p class="num5">642 h</p><p class="small">de location par planche de station, en trois saisons</p></div>
+</div>
+<p><b class="ink">Environ 62 kg de CO₂e par an</b> pour trois planches classiques renouvelées tous les deux ans. Même règle que pour le coût : on compte la moitié de l’empreinte, puisque la planche est revendue.</p>
+</div>
+<div class="grow g20">
+<div class="hb"><p class="hbl2">@ 10 sessions par an</p><div class="bar bcork" style="width:200px"></div><p class="hbv">6,2 kg</p></div>
+<div class="hb"><p class="hbl2">@ 20 sessions par an</p><div class="bar bsable" style="width:100px"></div><p class="hbv">3,1 kg</p></div>
+<div class="hb"><p class="hbl2">@ 40 sessions par an</p><div class="bar bgrey" style="width:50px"></div><p class="hbv">1,6 kg</p></div>
+<div class="hb"><p class="hbl2">KORKO, une heure</p><div class="bar bteal" style="width:2px"></div><p class="hbv">56 g</p></div>
+</div>
+</div>
+<p class="mb16">Une planche partagée étale son empreinte sur des centaines de sessions : environ 56 fois moins de CO₂e par session qu’avec ses propres planches, surfées 20 fois par an.</p>
+<p class="small">Estimation GREEN WAVE d’après les analyses de cycle de vie de think+ (2022, Ecoinvent 3.8) : la planche seule, des matières premières à la fin de vie ; trajet, combinaison et accessoires non comptés. KORKO : 43 kg pour la planche fabriquée à Anglet (2022), moins 16,8 % pour la série fabriquée à Taïwan (think+, 2025, changement climatique), répartis sur trois saisons de six mois à 35,6 heures louées par mois, l’occupation du plan.</p>
+<img loading="lazy" decoding="async" class="flogo" src="assets/677f663d790e7ce91b6843edccce87af.svg" alt="NOTOX"><div class="pg"></div><p class="foot">KORKO Self-Service</p>
+</section>
+<section id="fr-anchor" data-lang="fr" data-n="8" style="counter-reset:page 7" class="split t-anchor" data-transition="fade">
+<img loading="lazy" decoding="async" class="bgm" src="assets/5c5d61d72b40cc4e6e83625d675f4e7d.svg" alt="">
+<div class="splitL">
+<div class="w1040">
+<div class="eb"><x-shape kind="diamond" class="dia"></x-shape><p class="ebt">LA RÉPONSE · LE PRIX</p></div>
+<h2>Le prix à la minute, ici, on connaît déjà.</h2>
+<div class="row mb28">
+<div class="card4"><p class="lab">PONY · VÉLO</p><p class="num4">0,26 €</p><p><b class="ink">La minute, plus 1 € au départ.</b> 800 vélos, 12 communes.</p></div>
+<div class="card4"><p class="lab">KORKO · PLANCHE</p><p class="num4">0,25 €</p><p><b class="ink">La minute, rien au départ.</b> Plafonné à 49 € la journée.</p></div>
+<div class="card4"><p class="lab">UNE HEURE</p><p class="num4">15 €</p><p><b class="ink">Sur une planche KORKO.</b> 16,60 € à vélo.</p></div>
+</div>
+<p class="mb16">Le libre-service l’emporte pour un usage occasionnel, l’achat pour un usage quotidien. KORKO vise le surfeur occasionnel.</p>
+<p class="small">Tarifs publics Pony, offices de tourisme d’Anglet et d’Hendaye, 18 novembre 2026. Pony est un service indépendant, sans lien avec GREEN WAVE. Photo : Pony / Unsplash.</p>
+</div>
+</div>
+<img loading="lazy" decoding="async" class="phf phf2" src="assets/6dc2ca1357cf0b9aa6a3063b8712cb10.jpg" alt="A Pony shared electric bike parked on the seafront in Biarritz, with the Rocher de la Vierge behind">
+<img loading="lazy" decoding="async" class="flogo" src="assets/677f663d790e7ce91b6843edccce87af.svg" alt="NOTOX"><div class="pg"></div><p class="foot">KORKO Self-Service</p>
+</section>
+<section id="fr-promise" data-lang="fr" data-n="9" style="counter-reset:page 8" class="banded t-promise" data-transition="fade">
+<img loading="lazy" decoding="async" class="bgm" src="assets/5c5d61d72b40cc4e6e83625d675f4e7d.svg" alt="">
+<img loading="lazy" decoding="async" class="band" src="assets/60d249a1f47f789a135403bdb8afd8dc.jpg" alt="A surfer walking toward the waves with a KORKO cork board under his arm">
+<div class="bandc">
+<div class="row64">
+<div style="width:480px" class="col">
+<div class="eb"><x-shape kind="diamond" class="dia"></x-shape><p class="ebt">LA RÉPONSE</p></div>
+<h1 class="mb28">Surfer plus, posséder moins.</h1>
+<p>La planche vous attend déjà.</p>
+</div>
+<div class="grow g8"><p class="lab">POURQUOI Y CROIRE</p><h3>Inventée par NOTOX, éprouvée en sauvetage.</h3><p class="small">Une planche en liège née à Anglet, utilisée par les sauveteurs landais depuis environ huit ans.</p></div>
+<div class="grow g8"><p class="lab">CÔTÉ PRATIQUE</p><h3>Une planche près de la plage.</h3><p class="small">À la minute, du lever au coucher du soleil. Pas de comptoir, pas de clé, rien à installer.</p></div>
+<div class="grow g8"><p class="lab">CÔTÉ PLAISIR</p><h3>Surfer, sans posséder.</h3><p class="small">Prenez-la, surfez, reposez-la. Conquis ? Gardez-la : toutes les planches de station sont à vendre.</p></div>
+</div>
+</div>
+<img loading="lazy" decoding="async" class="flogo" src="assets/677f663d790e7ce91b6843edccce87af.svg" alt="NOTOX"><div class="pg"></div><p class="foot">KORKO Self-Service</p>
+</section>
+<section id="fr-j1" data-lang="fr" data-n="10" style="counter-reset:page 9" class="split t-j1" data-transition="fade">
+<img loading="lazy" decoding="async" class="bgm" src="assets/5c5d61d72b40cc4e6e83625d675f4e7d.svg" alt="">
+<img loading="lazy" decoding="async" class="handA" src="assets/ac38fae6d40e448458b43d8184f772fe.webp" alt="A hand holding a phone. App screen: spots around me by bike or bus, with free boards">
+<div class="splitL">
+<div class="wj2">
+<div class="eb"><x-shape kind="diamond" class="dia"></x-shape><p class="ebt">LE PARCOURS · 1 SUR 7</p></div>
+<h2>Arrivez les mains vides.</h2>
+<div class="g20"><p class="lead">À pied, à vélo, en bus ou en train : la planche est déjà sur place, à deux pas de l’eau.</p><p>L’appli indique les spots à moins d’une heure sans voiture, et comment y aller.</p></div>
+</div>
+</div>
+<img loading="lazy" decoding="async" class="phf phf2" src="assets/d891ac180fef3ff8aff7d393ac99888d.jpg" alt="A smiling woman with a beach bag walking through a campsite under the pines">
+<img loading="lazy" decoding="async" class="flogo" src="assets/677f663d790e7ce91b6843edccce87af.svg" alt="NOTOX"><div class="pg"></div><p class="foot">KORKO Self-Service</p>
+</section>
+<section id="fr-j2" data-lang="fr" data-n="11" style="counter-reset:page 10" class="split t-j2" data-transition="fade">
+<img loading="lazy" decoding="async" class="bgm" src="assets/5c5d61d72b40cc4e6e83625d675f4e7d.svg" alt="">
+<img loading="lazy" decoding="async" class="handA" src="assets/5f0c8de645b5c652ef09c44a1d4eb816.webp" alt="A hand holding a phone. App screen: conditions at a spot and boards available">
+<div class="splitL">
+<div class="wj2">
+<div class="eb"><x-shape kind="diamond" class="dia"></x-shape><p class="ebt">LE PARCOURS · 2 SUR 7</p></div>
+<h2>Trouvez votre spot.</h2>
+<div class="g20"><p class="lead">Houle, vent, marée : spot par spot, en clair.</p><p>Et le nombre de planches KORKO libres sur le rack, en temps réel.</p></div>
+</div>
+</div>
+<img loading="lazy" decoding="async" class="phf phf2" src="assets/5915cbfec11d8f14fcf410e68668ae0f.jpg" alt="A sandy beach with a jetty, a few people at the water’s edge and a blue sky">
+<img loading="lazy" decoding="async" class="flogo" src="assets/677f663d790e7ce91b6843edccce87af.svg" alt="NOTOX"><div class="pg"></div><p class="foot">KORKO Self-Service</p>
+</section>
+<section id="fr-j3" data-lang="fr" data-n="12" style="counter-reset:page 11" class="split t-j3" data-transition="fade">
+<img loading="lazy" decoding="async" class="bgm" src="assets/5c5d61d72b40cc4e6e83625d675f4e7d.svg" alt="">
+<img loading="lazy" decoding="async" class="handA" src="assets/8082babee0bae000f0a79ba7623a238a.webp" alt="A hand holding a phone. App screen: bring your phone to the badge, €0.25 a minute">
+<div class="splitL">
+<div class="wj2">
+<div class="eb"><x-shape kind="diamond" class="dia"></x-shape><p class="ebt">LE PARCOURS · 3 SUR 7</p></div>
+<h2>Approchez votre téléphone.</h2>
+<div class="g20"><p class="lead">Posez-le sur le badge de la planche, puis payez avec Apple Pay ou Google Pay.</p><p>Une fois payée, la planche peut bouger. Pas d’antivol, pas de clé : déplacée sans session, elle sonne. Rien à installer, pas de caution.</p></div>
+</div>
+</div>
+<img loading="lazy" decoding="async" class="phf phf2 opr" src="assets/723180f96fb3d1e322ea76da8fa06778.jpg" alt="A smiling surfer holding a KORKO cork board and her phone on a dune path at sunset" style="transform:rotate(0deg);filter:blur(0);backdrop-filter:blur(0)">
+<img loading="lazy" decoding="async" class="flogo" src="assets/677f663d790e7ce91b6843edccce87af.svg" alt="NOTOX"><div class="pg"></div><p class="foot">KORKO Self-Service</p>
+</section>
+<section id="fr-j4" data-lang="fr" data-n="13" style="counter-reset:page 12" class="split t-j4" data-transition="fade">
+<img loading="lazy" decoding="async" class="bgm" src="assets/5c5d61d72b40cc4e6e83625d675f4e7d.svg" alt="">
+<div class="splitL">
+<div class="w800">
+<div class="eb"><x-shape kind="diamond" class="dia"></x-shape><p class="ebt">LE PARCOURS · 4 SUR 7</p></div>
+<h2>Surfez.</h2>
+<div class="g20"><div class="g8"><p class="num cork">0,25 €</p><p class="lab">LA MINUTE</p></div><p class="lead">Jamais plus de 49 € la journée, ni 99 € sur 7 jours.</p><p>Du lever au coucher du soleil : le rack n’a pas d’horaires. Combinaisons disponibles chez l’hôte.</p></div>
+</div>
+</div>
+<img loading="lazy" decoding="async" class="phf" src="assets/a1b473a0ae49ed31aecca211b0708672.jpg" alt="A surfer in a green swimsuit riding a small wave on a KORKO cork board">
+<img loading="lazy" decoding="async" class="flogo" src="assets/677f663d790e7ce91b6843edccce87af.svg" alt="NOTOX"><div class="pg"></div><p class="foot">KORKO Self-Service</p>
+</section>
+<section id="fr-j5" data-lang="fr" data-n="14" style="counter-reset:page 13" class="split t-j5" data-transition="fade">
+<img loading="lazy" decoding="async" class="bgm" src="assets/5c5d61d72b40cc4e6e83625d675f4e7d.svg" alt="">
+<div class="splitL">
+<div class="w800">
+<div class="eb"><x-shape kind="diamond" class="dia"></x-shape><p class="ebt">LE PARCOURS · 5 SUR 7</p></div>
+<h2>Reposez-la. Repartez.</h2>
+<div class="g20"><p class="lead">Un dernier geste du téléphone : la session se ferme, le paiement part tout seul.</p><p>Rien à rincer, rien à réparer, rien à ranger, rien à rapporter.</p></div>
+</div>
+</div>
+<img loading="lazy" decoding="async" class="phf" src="assets/ad0345dda96feda68459d151eb88adcd.jpg" alt="A surfer putting a KORKO board back on its rack at sunset">
+<img loading="lazy" decoding="async" class="flogo" src="assets/677f663d790e7ce91b6843edccce87af.svg" alt="NOTOX"><div class="pg"></div><p class="foot">KORKO Self-Service</p>
+</section>
+<section id="fr-j6" data-lang="fr" data-n="15" style="counter-reset:page 14" data-transition="fade">
+<img loading="lazy" decoding="async" class="bgm" src="assets/5c5d61d72b40cc4e6e83625d675f4e7d.svg" alt="">
+<img loading="lazy" decoding="async" class="handB" src="assets/8916faf2464f289b628e75c6754e8634.webp" alt="A hand holding a phone. App screen: tubes balance and what they can be exchanged for">
+<div class="wj6">
+<div class="eb"><x-shape kind="diamond" class="dia"></x-shape><p class="ebt">LE PARCOURS · 6 SUR 7</p></div>
+<h2>Et l’appli donne envie de revenir.</h2>
+<div class="g12 mb16">
+<div class="act g8"><h3>Tubes</h3><p>Des points de fidélité : on en gagne avec les défis, un dégât signalé, une planche rapportée. On les échange contre des minutes ou un café.</p></div>
+<div class="dimb g8"><h3>Défis</h3><p>Deux ou trois, jamais obligatoires. Quand la mer est dangereuse, il n’y en a pas.</p></div>
+<div class="dimb g8"><h3>Votre saison</h3><p>Toutes vos sessions, sans planche à acheter, ranger ni transporter.</p></div>
+</div>
+<p class="small">Appli de démonstration ; les contenus affichés sont des exemples.</p>
+</div>
+<img loading="lazy" decoding="async" class="flogo" src="assets/677f663d790e7ce91b6843edccce87af.svg" alt="NOTOX"><div class="pg"></div><p class="foot">KORKO Self-Service</p>
+</section>
+<section id="fr-j6b" data-lang="fr" data-n="16" style="counter-reset:page 15" data-transition="fade">
+<img loading="lazy" decoding="async" class="bgm" src="assets/5c5d61d72b40cc4e6e83625d675f4e7d.svg" alt="">
+<img loading="lazy" decoding="async" class="handB" src="assets/147698d9072ea71d80303af4c8ed2163.webp" alt="A hand holding a phone. App screen: today’s optional challenges and the tubes they earn">
+<div class="wj6">
+<div class="eb"><x-shape kind="diamond" class="dia"></x-shape><p class="ebt">LE PARCOURS · 6 SUR 7</p></div>
+<h2>Et l’appli donne envie de revenir.</h2>
+<div class="g12 mb16">
+<div class="dimb g8"><h3>Tubes</h3><p>Des points de fidélité : on en gagne avec les défis, un dégât signalé, une planche rapportée. On les échange contre des minutes ou un café.</p></div>
+<div class="act g8"><h3>Défis</h3><p>Deux ou trois, jamais obligatoires. Quand la mer est dangereuse, il n’y en a pas.</p></div>
+<div class="dimb g8"><h3>Votre saison</h3><p>Toutes vos sessions, sans planche à acheter, ranger ni transporter.</p></div>
+</div>
+<p class="small">Appli de démonstration ; les contenus affichés sont des exemples.</p>
+</div>
+<img loading="lazy" decoding="async" class="flogo" src="assets/677f663d790e7ce91b6843edccce87af.svg" alt="NOTOX"><div class="pg"></div><p class="foot">KORKO Self-Service</p>
+</section>
+<section id="fr-j6c" data-lang="fr" data-n="17" style="counter-reset:page 16" data-transition="fade">
+<img loading="lazy" decoding="async" class="bgm" src="assets/5c5d61d72b40cc4e6e83625d675f4e7d.svg" alt="">
+<img loading="lazy" decoding="async" class="handB" src="assets/c32a8ec38a651fb86c8dcd9d2f95295d.webp" alt="A hand holding a phone. App screen: sessions this season without owning a board">
+<div class="wj6">
+<div class="eb"><x-shape kind="diamond" class="dia"></x-shape><p class="ebt">LE PARCOURS · 6 SUR 7</p></div>
+<h2>Et l’appli donne envie de revenir.</h2>
+<div class="g12 mb16">
+<div class="dimb g8"><h3>Tubes</h3><p>Des points de fidélité : on en gagne avec les défis, un dégât signalé, une planche rapportée. On les échange contre des minutes ou un café.</p></div>
+<div class="dimb g8"><h3>Défis</h3><p>Deux ou trois, jamais obligatoires. Quand la mer est dangereuse, il n’y en a pas.</p></div>
+<div class="act g8"><h3>Votre saison</h3><p>Toutes vos sessions, sans planche à acheter, ranger ni transporter.</p></div>
+</div>
+<p class="small">Appli de démonstration ; les contenus affichés sont des exemples.</p>
+</div>
+<img loading="lazy" decoding="async" class="flogo" src="assets/677f663d790e7ce91b6843edccce87af.svg" alt="NOTOX"><div class="pg"></div><p class="foot">KORKO Self-Service</p>
+</section>
+<section id="fr-j7" data-lang="fr" data-n="18" style="counter-reset:page 17" class="split t-j7" data-transition="fade">
+<img loading="lazy" decoding="async" class="bgm" src="assets/5c5d61d72b40cc4e6e83625d675f4e7d.svg" alt="">
+<img loading="lazy" decoding="async" class="handA" src="assets/5e25ae174db57d3f4498ca0798ad6c24.webp" alt="A hand holding a phone. App screen: boards I follow and their falling price">
+<div class="splitL">
+<div class="wj2">
+<div class="eb"><x-shape kind="diamond" class="dia"></x-shape><p class="ebt">LE PARCOURS · 7 SUR 7</p></div>
+<h2>Conquis ?<br>Gardez-la.</h2>
+<div class="g20"><p class="lead">Toutes les planches de station sont à vendre, et leur prix baisse à chaque location.</p><div class="row"><div class="grow g8"><p class="num2 cork">690 €</p><p class="small">neuve</p></div><div class="grow g8"><p class="num2">250 €</p><p class="small">au minimum</p></div></div><p>Suivez une planche, utilisez vos tubes, achetez-la. Et une planche qu’on ne rend pas, on l’a achetée.</p></div>
+</div>
+</div>
+<img loading="lazy" decoding="async" class="phf phf2 op80" src="assets/bda12adae3fdfafb8285339ea6ffca6e.jpg" alt="A smiling surfer carrying a KORKO cork board on the beach">
+<img loading="lazy" decoding="async" class="flogo" src="assets/677f663d790e7ce91b6843edccce87af.svg" alt="NOTOX"><div class="pg"></div><p class="foot">KORKO Self-Service</p>
+</section>
+<section id="fr-try" data-lang="fr" data-n="19" style="counter-reset:page 18" class="split t-j7" data-transition="fade">
+<img loading="lazy" decoding="async" class="bgm" src="assets/5c5d61d72b40cc4e6e83625d675f4e7d.svg" alt="">
+<div class="splitL">
+<div class="w768">
+<div class="eb"><x-shape kind="diamond" class="dia"></x-shape><p class="ebt">À VOUS DE JOUER</p></div>
+<h2 class="mb16">Comme si vous y étiez.</h2>
+<p class="lead mb40">Essayez le parcours guidé, sur votre téléphone.</p>
+<div class="row mb28 aic">
+<div class="qrmid"><svg viewBox="0 0 33 33" width="220" height="220" role="img" aria-label="QR code opening the KORKO demo" shape-rendering="crispEdges"><path stroke="#1C1A17" fill="none" d="M2 2.5h7M10 2.5h1M15 2.5h1M19 2.5h1M24 2.5h7M2 3.5h1M8 3.5h1M10 3.5h1M13 3.5h1M15 3.5h2M19 3.5h1M21 3.5h1M24 3.5h1M30 3.5h1M2 4.5h1M4 4.5h3M8 4.5h1M10 4.5h2M15 4.5h1M17 4.5h2M20 4.5h3M24 4.5h1M26 4.5h3M30 4.5h1M2 5.5h1M4 5.5h3M8 5.5h1M11 5.5h2M14 5.5h3M19 5.5h4M24 5.5h1M26 5.5h3M30 5.5h1M2 6.5h1M4 6.5h3M8 6.5h1M10 6.5h2M13 6.5h1M15 6.5h2M18 6.5h2M21 6.5h2M24 6.5h1M26 6.5h3M30 6.5h1M2 7.5h1M8 7.5h1M12 7.5h5M19 7.5h2M22 7.5h1M24 7.5h1M30 7.5h1M2 8.5h7M10 8.5h1M12 8.5h1M14 8.5h1M16 8.5h1M18 8.5h1M20 8.5h1M22 8.5h1M24 8.5h7M12 9.5h2M15 9.5h1M21 9.5h2M2 10.5h1M5 10.5h8M15 10.5h1M17 10.5h4M22 10.5h2M26 10.5h1M28 10.5h3M2 11.5h5M9 11.5h2M13 11.5h5M21 11.5h1M25 11.5h2M28 11.5h2M4 12.5h1M6 12.5h1M8 12.5h1M10 12.5h1M12 12.5h1M14 12.5h2M17 12.5h1M19 12.5h2M24 12.5h1M28 12.5h1M5 13.5h1M9 13.5h2M12 13.5h4M17 13.5h1M19 13.5h1M22 13.5h2M25 13.5h1M27 13.5h1M30 13.5h1M3 14.5h1M7 14.5h4M13 14.5h3M18 14.5h1M20 14.5h6M30 14.5h1M3 15.5h5M11 15.5h1M15 15.5h3M19 15.5h2M24 15.5h7M2 16.5h1M4 16.5h2M8 16.5h1M11 16.5h2M14 16.5h2M17 16.5h1M19 16.5h1M21 16.5h1M28 16.5h1M30 16.5h1M2 17.5h1M4 17.5h4M9 17.5h2M12 17.5h2M18 17.5h1M20 17.5h2M23 17.5h2M26 17.5h1M28 17.5h1M30 17.5h1M5 18.5h5M11 18.5h1M16 18.5h1M18 18.5h1M21 18.5h2M27 18.5h1M2 19.5h1M4 19.5h1M6 19.5h1M12 19.5h2M15 19.5h3M20 19.5h3M26 19.5h1M28 19.5h2M2 20.5h3M6 20.5h3M10 20.5h1M12 20.5h1M17 20.5h2M21 20.5h3M27 20.5h1M30 20.5h1M2 21.5h2M5 21.5h3M9 21.5h1M12 21.5h3M16 21.5h3M20 21.5h1M22 21.5h1M24 21.5h2M27 21.5h2M2 22.5h3M8 22.5h2M12 22.5h1M14 22.5h6M21 22.5h9M10 23.5h3M16 23.5h2M20 23.5h3M26 23.5h2M2 24.5h7M10 24.5h2M13 24.5h1M16 24.5h4M21 24.5h2M24 24.5h1M26 24.5h2M2 25.5h1M8 25.5h1M10 25.5h2M16 25.5h1M18 25.5h2M21 25.5h2M26 25.5h1M2 26.5h1M4 26.5h3M8 26.5h1M10 26.5h2M13 26.5h1M15 26.5h2M18 26.5h1M21 26.5h7M30 26.5h1M2 27.5h1M4 27.5h3M8 27.5h1M10 27.5h1M12 27.5h2M15 27.5h1M17 27.5h2M22 27.5h2M30 27.5h1M2 28.5h1M4 28.5h3M8 28.5h1M12 28.5h3M16 28.5h3M23 28.5h1M25 28.5h2M28 28.5h3M2 29.5h1M8 29.5h1M12 29.5h1M14 29.5h3M20 29.5h2M23 29.5h1M25 29.5h1M27 29.5h2M30 29.5h1M2 30.5h7M10 30.5h1M12 30.5h1M14 30.5h1M16 30.5h1M21 30.5h2M24 30.5h2"/></svg></div>
+<div class="grow g20">
+<p>Neuf étapes : trouver un spot, louer en deux gestes, surfer, rendre la planche et voir son prix baisser.</p>
+<p class="small">Une simulation. Rien à installer.</p>
+</div>
+</div>
+<p class="cta mb16"><a href="https://korko-journey-v11.netlify.app/">Scannez le code, ou touchez ici →</a></p>
+<p class="small cork"><a href="https://korko-journey-v11.netlify.app/">korko-journey-v11.netlify.app</a></p>
+</div>
+</div>
+<img loading="lazy" decoding="async" class="phf phf3" src="assets/ef0faa35a6c738c56b27cfe22b36329f.jpg" alt="A smiling surfer on the beach holding a KORKO cork board across his arms, the ocean behind him">
+<img loading="lazy" decoding="async" class="flogo" src="assets/677f663d790e7ce91b6843edccce87af.svg" alt="NOTOX"><div class="pg"></div><p class="foot">KORKO Self-Service</p>
+</section>
+<section id="fr-pouch" data-lang="fr" data-n="20" style="counter-reset:page 19" class="t-pouch" data-transition="fade">
+<img loading="lazy" decoding="async" class="bgm" src="assets/5c5d61d72b40cc4e6e83625d675f4e7d.svg" alt="">
+<img loading="lazy" decoding="async" class="pouch" src="assets/32bcf3f329e408cd9a3c496b7b20cceb.webp" alt="A clear waterproof phone pouch with a black KORKO by NOTOX closure and a navy cord">
+<div class="w800">
+<div class="eb"><x-shape kind="diamond" class="dia"></x-shape><p class="ebt">LE PARCOURS · LE TÉLÉPHONE</p></div>
+<h2>Tout passe par le téléphone. Il ne doit jamais être un souci.</h2>
+<div class="g8 mb28"><p class="num cork">15 €</p><p class="lab">LA POCHETTE ÉTANCHE</p></div>
+<p class="lead mb40 wtxt">Ouvrez votre compte à l’avance et prenez la pochette : une heure de surf est offerte avec.</p>
+<p class="small">Visuel de concept.</p>
+</div>
+<img loading="lazy" decoding="async" class="flogo" src="assets/677f663d790e7ce91b6843edccce87af.svg" alt="NOTOX"><div class="pg"></div><p class="foot">KORKO Self-Service</p>
+</section>
+<section id="fr-tough" data-lang="fr" data-n="21" style="counter-reset:page 20" class="fs" data-transition="fade">
+<video class="bleed" muted loop playsinline preload="none" poster="assets/0f1b3869bf4fbddfb205767829a24059.jpg"><source src="assets/tough.mp4" type="video/mp4"></video>
+<div class="fsg"></div>
+<h1 class="fst">Assez solides, ces planches ?</h1>
+<h1 class="fst sand">On dirait bien que oui.</h1>
+</section>
+<section id="fr-korko" data-lang="fr" data-n="22" style="counter-reset:page 21" class="split t-korko" data-transition="fade">
+<img loading="lazy" decoding="async" class="bgm" src="assets/5c5d61d72b40cc4e6e83625d675f4e7d.svg" alt="">
+<div class="splitL">
+<div class="w880">
+<div class="eb"><x-shape kind="diamond" class="dia"></x-shape><p class="ebt">POURQUOI ÇA MARCHE · LA PLANCHE</p></div>
+<h2>Éprouvée en sauvetage depuis environ huit ans.</h2>
+<p class="lead mb40">Mise au point à l’atelier NOTOX il y a près de dix ans, la planche en liège a servi aux sauveteurs de la côte landaise, en intervention réelle. Si elle tient là, elle tient en libre-service.</p>
+<div class="grid2 mb28">
+<p><b class="ink">Sans wax.</b> Le liège accroche, mouillé comme sec.</p>
+<p><b class="ink">Réparable.</b> Un choc se répare simplement.</p>
+<p><b class="ink">Insensible au soleil.</b> Ne craint pas les fortes chaleurs.</p>
+<p><b class="ink">Exclusif.</b> Un liège qu’on ne trouve pas dans le commerce.</p>
+</div>
+<p class="small">Plus de 700 KORKO artisanales vendues depuis 2017. Aujourd’hui fabriquée en série : 690 € TTC, dérives comprises.</p>
+</div>
+</div>
+<img loading="lazy" decoding="async" class="phf" src="assets/846a80a3a87b876c58e9b13548da2a69.jpg" alt="Three lifeguards on a boardwalk above a Landes beach with a NOTOX cork rescue board">
+<img loading="lazy" decoding="async" class="flogo" src="assets/677f663d790e7ce91b6843edccce87af.svg" alt="NOTOX"><div class="pg"></div><p class="foot">KORKO Self-Service</p>
+</section>
+<section id="fr-where" data-lang="fr" data-n="23" style="counter-reset:page 22" data-transition="fade">
+<img loading="lazy" decoding="async" class="bgm" src="assets/5c5d61d72b40cc4e6e83625d675f4e7d.svg" alt="">
+<div class="eb"><x-shape kind="diamond" class="dia"></x-shape><p class="ebt">LA SUITE · OÙ ET QUAND</p></div>
+<h2>Trois stations pilotes à l’été 2027.</h2>
+<div class="row mb40">
+<div class="card4"><p class="lab">AUJOURD’HUI</p><h3>On construit le MVP</h3><p>Nous finançons le développement de prototypes fonctionnels : les balises des planches, l’appli et le back-office qui supervise les stations.</p></div>
+<div class="card4"><p class="lab">MARS 2027</p><h3>Les planches arrivent</h3><p>La première série de planches en liège KORKO arrive de Taïwan.</p></div>
+<div class="card4"><p class="lab">ÉTÉ 2027</p><h3>Trois stations ouvrent</h3><p>Dans des campings, des surf camps et des lieux de loisirs proches de la plage, sur la côte atlantique.</p></div>
+</div>
+<p class="lab mb16">SITES PILOTES SIGNÉS · 1 SUR 3</p>
+<div class="row mb16"><div class="seg segon"></div><div class="seg"></div><div class="seg"></div></div>
+<div class="row"><p class="grow"><b class="ink">Saint-Pierre-d’Oléron.</b> Signé.</p><p class="grow">Site 2. À débloquer.</p><p class="grow">Site 3. À débloquer.</p></div>
+<img loading="lazy" decoding="async" class="flogo" src="assets/677f663d790e7ce91b6843edccce87af.svg" alt="NOTOX"><div class="pg"></div><p class="foot">KORKO Self-Service</p>
+</section>
+<section id="fr-hostq" data-lang="fr" data-n="24" style="counter-reset:page 23" class="fs onphoto" data-transition="fade">
+<img loading="lazy" decoding="async" class="bleed" src="assets/8e5bcd781d579bff02f52d70ed4ef99b.jpg" alt="A young site manager at his beach-side reception desk, pen in hand, looking puzzled at the visitor across the counter">
+<div class="fsg"></div>
+<div class="eb"><x-shape kind="diamond" class="dia"></x-shape><p class="ebt">ET POUR LE SITE QUI ACCUEILLE UNE STATION ?</p></div>
+<h1 class="fst fst88 w880">Attendez. Ça ne me coûte rien…</h1>
+<h1 class="fst fst88 w880">…et ça me rapporte ?</h1>
+</section>
+<section id="fr-host" data-lang="fr" data-n="25" style="counter-reset:page 24" class="t-host" data-transition="fade">
+<img loading="lazy" decoding="async" class="bgm" src="assets/b8caa2ba2c445773f033c3f3ecb41f85.svg" alt="">
+<div class="eb"><x-shape kind="diamond" class="dia"></x-shape><p class="ebt">POUR LES SITES QUI ACCUEILLENT UNE STATION</p></div>
+<h2>L’hôte ne paie rien et touche une part de chaque location.</h2>
+<div class="row mb40">
+<div class="card4"><p class="num3">0 €</p><h3>à payer</h3><p>Planches, rack, installation, entretien : tout est pour nous. <b class="ink">Aucun coût caché.</b></p></div>
+<div class="card4"><p class="num3">15 %</p><h3>de chaque location</h3><p>Des recettes de location de la station, hors TVA.</p></div>
+<div class="card4"><p class="num3">≈ 7,8 k€</p><h3>par saison</h3><p>Exemple : un camping avec une station en rythme de croisière.</p></div>
+<div class="card4"><p class="num3">1</p><h3>emplacement à fournir</h3><p>Près de l’accès à la plage. Ni électricité, ni personnel, ni caisse.</p></div>
+</div>
+<h3 class="mb16"><a class="hl" href="mailto:pierre@notoxsurf.com?subject=KORKO%20Self-Service">Vous avez un site ? Parlons-en. →</a></h3>
+<p class="small">Exemple tiré du scénario de référence du plan KORKO : 15 % de 52,2 k€ de recettes de location hors TVA. Le pilote 2027 donnera les chiffres réels.</p>
+<img loading="lazy" decoding="async" class="flogo" src="assets/677f663d790e7ce91b6843edccce87af.svg" alt="NOTOX"><div class="pg"></div><p class="foot">KORKO Self-Service</p>
+</section>
+<section id="fr-end" data-lang="fr" data-n="26" style="counter-reset:page 25" class="fs onphoto" data-transition="fade">
+<img loading="lazy" decoding="async" class="bleed" src="assets/d9f4cfa5e8c103a89b38ed5f132cfc06.jpg" alt="Aerial view of a surfer paddling a KORKO cork board on open blue water">
+<div class="fsg"></div>
+<h1 class="fst">Sortez du garage.</h1>
+<h1 class="fst sand">Libérez votre surf.</h1>
+<div class="grow"></div>
+<p class="fsl"><b>On en parle ?</b></p>
+<p class="endc">Pierre Pomiers</p>
+<p class="endc mb40"><a href="mailto:pierre@notoxsurf.com">pierre@notoxsurf.com</a> · <a href="tel:+33679872367">+33 6 79 87 23 67</a></p>
+<div class="logos"><img loading="lazy" decoding="async" class="lg-n" src="assets/45440c205941907b83a9ecf05949d3c6.svg" alt="NOTOX"><p class="x xl">×</p><img loading="lazy" decoding="async" class="lg-k" src="assets/3509f005bee5c86aac50c9c080da24fb.png" alt="KORKO by NOTOX"></div>
+<p class="small sh mt24">KORKO Self-Service · Été 2027 · Côte atlantique française</p>
+</section>
+</div></div>
+<div id="bar"><button type="button" id="prev">‹</button><span id="cnt"></span><button type="button" id="next">›</button><span class="sp"></span><span id="lg"><button type="button" data-set="fr">FR</button><button type="button" data-set="en">EN</button></span></div>
+<script>(function(){
+var N=26,UI={"en": {"pick": "Choose your language", "rot": "Turn your phone sideways for a larger view", "prev": "Previous", "next": "Next"}, "fr": {"pick": "Choisissez votre langue", "rot": "Tournez votre téléphone pour voir plus grand", "prev": "Précédent", "next": "Suivant"}},META={"en": ["KORKO Self-Service: surf more, own less", "Cork surfboards rented by the minute, from self-service stations near the beach. Three pilot stations on the French Atlantic coast, summer 2027."], "fr": ["KORKO Self-Service : surfer plus, posséder moins", "Des planches de surf en liège louées à la minute, en libre-service près de la plage. Trois stations pilotes sur la côte atlantique, été 2027."]},stage=document.getElementById('stage'),frame=document.getElementById('frame');
+var lang,n;
+function fit(){var bar=52,de=document.documentElement,w=de.clientWidth,h=de.clientHeight-bar,s=Math.min(w/1920,h/1080);
+ stage.style.transform='scale('+s+')';frame.style.width=1920*s+'px';frame.style.height=1080*s+'px';
+ frame.style.left=(w-1920*s)/2+'px';frame.style.top=Math.max(0,(h-1080*s)/2)+'px';}
+function sec(l,i){return stage.querySelector('section[data-lang="'+l+'"][data-n="'+i+'"]');}
+function warm(l,i){var s=sec(l,i);if(!s)return;[].forEach.call(s.querySelectorAll('img[loading=lazy]'),function(im){im.loading='eager';});}
+function show(l,i,push){i=Math.max(1,Math.min(N,i));
+ var old=stage.querySelector('section.on');if(old){old.classList.remove('on');var ov=old.querySelector('video');if(ov)ov.pause();}
+ lang=l;n=i;var s=sec(l,i);warm(l,i);s.classList.add('on');
+ var v=s.querySelector('video');if(v){v.currentTime=0;var p=v.play();if(p&&p.catch)p.catch(function(){});}
+ warm(l,i+1);warm(l,i+2);
+ document.documentElement.lang=l;document.title=META[l][0];
+ document.getElementById('cnt').textContent=i+' / '+N;
+ document.getElementById('prev').disabled=i===1;document.getElementById('next').disabled=i===N;
+ document.getElementById('prev').setAttribute('aria-label',UI[l].prev);document.getElementById('next').setAttribute('aria-label',UI[l].next);
+ document.getElementById('rot').textContent=UI[l].rot;
+ [].forEach.call(document.querySelectorAll('#lg button'),function(b){b.classList.toggle('cur',b.dataset.set===l);});
+ var h='#'+l+'/'+i;if(location.hash!==h){if(push)history.pushState(null,'',h);else history.replaceState(null,'',h);}
+ try{localStorage.setItem('korko-lang',l);}catch(e){}}
+function fromHash(){var m=/^#(fr|en)\/(\d+)$/.exec(location.hash);if(m)return[m[1],+m[2]];
+ var l=null;try{l=localStorage.getItem('korko-lang');}catch(e){}
+ if(l!=='fr'&&l!=='en')l=/^fr/i.test(navigator.language||'')?'fr':'en';return[l,1];}
+document.addEventListener('click',function(e){var t=e.target;
+ var b=t.closest&&t.closest('[data-set]');if(b){var onCover=!!b.closest('.langpick');show(b.dataset.set,onCover?2:n,true);return;}
+ if(t.closest&&t.closest('#prev')){show(lang,n-1,true);return;}
+ if(t.closest&&t.closest('#next')){show(lang,n+1,true);return;}
+ if(t.closest&&(t.closest('a')||t.closest('#bar')))return;
+ if(t.closest&&t.closest('#stage')&&n<N)show(lang,n+1,true);});
+document.addEventListener('keydown',function(e){if(e.metaKey||e.ctrlKey||e.altKey)return;var k=e.key;
+ if(k==='ArrowRight'||k==='PageDown'||k===' '||k==='Enter'){e.preventDefault();show(lang,n+1,true);}
+ else if(k==='ArrowLeft'||k==='PageUp'||k==='Backspace'){e.preventDefault();show(lang,n-1,true);}
+ else if(k==='Home')show(lang,1,true);else if(k==='End')show(lang,N,true);});
+var tx=null,ty=null;
+document.addEventListener('touchstart',function(e){tx=e.touches[0].clientX;ty=e.touches[0].clientY;},{passive:true});
+document.addEventListener('touchend',function(e){if(tx===null)return;var dx=e.changedTouches[0].clientX-tx,dy=e.changedTouches[0].clientY-ty;tx=null;
+ if(Math.abs(dx)>50&&Math.abs(dx)>Math.abs(dy)*1.5)show(lang,n+(dx<0?1:-1),true);},{passive:true});
+addEventListener('resize',fit);addEventListener('orientationchange',fit);
+addEventListener('popstate',function(){var s=fromHash();show(s[0],s[1],false);});
+fit();setTimeout(fit,60);setTimeout(fit,400);addEventListener('load',fit);var s0=fromHash();show(s0[0],s0[1],false);
+})();</script>
+</body></html>
