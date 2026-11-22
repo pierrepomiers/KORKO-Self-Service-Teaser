@@ -6,6 +6,8 @@
 <meta property="og:title" content="KORKO Self-Service: surf more, own less"><meta property="og:description" content="Cork surfboards rented by the minute, from self-service stations near the beach. Three pilot stations on the French Atlantic coast, summer 2027.">
 <meta property="og:type" content="website"><meta property="og:image" content="assets/2d7672e94fd74d6f6d617b9f652d61c5.jpg">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230B6A70'/%3E%3Crect x='9' y='9' width='14' height='14' fill='%23E8B77A' transform='rotate(45 16 16)'/%3E%3C/svg%3E">
+<link rel="manifest" href="manifest.webmanifest"><link rel="apple-touch-icon" href="assets/icon-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="KORKO"><meta name="theme-color" content="#0C1A1D">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
 <style>*{margin:0;box-sizing:content-box}html,body{height:100%}body{background:#0C1A1D;font:32px/1.2 Inter,Arial,sans-serif;overflow:hidden;-webkit-text-size-adjust:100%}
 html,body{width:100%;overflow:hidden;position:fixed;left:0;top:0}
@@ -22,14 +24,15 @@ a.hl{color:inherit;text-decoration:underline;text-decoration-color:#0B6A70;text-
 .lpb{display:flex;gap:18px}
 .lpb button{font:600 34px/1 'Inter Tight',Inter,Arial,sans-serif;color:#FFFDF9;background:rgba(12,26,29,.45);border:2px solid #FFFDF9;border-radius:44px;padding:20px 40px;cursor:pointer}
 .lpb button.cur{background:#FFFDF9;color:#10262A}
-#bar{position:fixed;left:0;right:0;bottom:0;height:52px;display:flex;align-items:center;justify-content:center;gap:10px;background:#0C1A1D;color:#E9E2D3;font:500 15px/1 Inter,Arial,sans-serif;user-select:none}
-#bar button{font:inherit;color:inherit;background:none;border:1px solid #3A4F53;border-radius:20px;height:34px;min-width:44px;padding:0 14px;cursor:pointer}
-#bar button:hover{border-color:#E9E2D3}#bar button[disabled]{opacity:.35;cursor:default}
-#bar .sp{flex:0 0 12px}#cnt{min-width:58px;text-align:center}#prev,#next{width:52px;padding:0}#lg{display:flex;flex:none}#lg button{min-width:46px;padding:0 12px}
+#bar{position:fixed;right:max(10px,env(safe-area-inset-right));bottom:max(8px,env(safe-area-inset-bottom));display:flex;align-items:center;gap:6px;padding:5px 6px;border-radius:24px;background:rgba(12,26,29,.72);color:#F3EEE2;font:500 14px/1 Inter,Arial,sans-serif;user-select:none;-webkit-user-select:none;transition:opacity .35s;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+#bar.idle{opacity:0;pointer-events:none}
+#bar button{font:inherit;color:inherit;background:none;border:1px solid rgba(243,238,226,.35);border-radius:18px;height:32px;min-width:40px;padding:0 10px;cursor:pointer;-webkit-tap-highlight-color:transparent}
+#bar button:hover{border-color:#F3EEE2}#bar button[disabled]{opacity:.35;cursor:default}
+#cnt{min-width:52px;text-align:center}#prev,#next,#fs{width:40px;padding:0}
+#lg{display:flex;flex:none;margin-left:4px}#lg button{min-width:40px;border-radius:0;margin-left:-1px}#lg button:first-child{border-radius:18px 0 0 18px;margin-left:0}#lg button:last-child{border-radius:0 18px 18px 0}
+#lg button.cur{background:#F3EEE2;color:#0C1A1D;border-color:#F3EEE2}
 html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
-#lg button{border-radius:0;margin-left:-1px}#lg button:first-child{border-radius:20px 0 0 20px;margin-left:0}#lg button:last-child{border-radius:0 20px 20px 0}
-#lg button.cur{background:#E9E2D3;color:#0C1A1D;border-color:#E9E2D3}
-#rot{position:fixed;left:0;right:0;top:0;padding:10px 14px;text-align:center;background:#0B6A70;color:#FBF7EE;font:500 14px/1.3 Inter,Arial,sans-serif;display:none}
+#rot{position:fixed;left:0;right:0;top:0;padding:8px 14px;text-align:center;background:#0B6A70;color:#FBF7EE;font:500 14px/1.3 Inter,Arial,sans-serif;display:none}
 @media (orientation:portrait) and (max-width:700px){#rot{display:block}}
 section{background:#F6F1E7;color:#10262A;font-family:'Inter',Arial,sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;counter-increment:page}
 h1{font-family:'Inter Tight','Inter',Arial,sans-serif;font-size:76px;font-weight:700;line-height:1.06;letter-spacing:-2px;color:#10262A}
@@ -958,11 +961,16 @@ p{font-size:28px;line-height:1.42;color:#46585A}
 <p class="small sh mt24">KORKO Self-Service · Été 2027 · Côte atlantique française</p>
 </section>
 </div></div>
-<div id="bar"><button type="button" id="prev">‹</button><span id="cnt"></span><button type="button" id="next">›</button><span class="sp"></span><span id="lg"><button type="button" data-set="fr">FR</button><button type="button" data-set="en">EN</button></span></div>
+<div id="bar"><button type="button" id="prev">‹</button><span id="cnt"></span><button type="button" id="next">›</button><span id="lg"><button type="button" data-set="fr">FR</button><button type="button" data-set="en">EN</button></span><button type="button" id="fs" aria-label="Full screen">⛶</button></div>
 <script>(function(){
 var N=26,UI={"en": {"pick": "Choose your language", "rot": "Turn your phone sideways for a larger view", "prev": "Previous", "next": "Next"}, "fr": {"pick": "Choisissez votre langue", "rot": "Tournez votre téléphone pour voir plus grand", "prev": "Précédent", "next": "Suivant"}},META={"en": ["KORKO Self-Service: surf more, own less", "Cork surfboards rented by the minute, from self-service stations near the beach. Three pilot stations on the French Atlantic coast, summer 2027."], "fr": ["KORKO Self-Service : surfer plus, posséder moins", "Des planches de surf en liège louées à la minute, en libre-service près de la plage. Trois stations pilotes sur la côte atlantique, été 2027."]},stage=document.getElementById('stage'),frame=document.getElementById('frame');
-var lang,n;
-function fit(){var bar=52,de=document.documentElement,w=de.clientWidth,h=de.clientHeight-bar,s=Math.min(w/1920,h/1080);
+var lang,n,bar=document.getElementById('bar'),idleT=null,touch=matchMedia('(hover: none)').matches;
+function wake(){bar.classList.remove('idle');clearTimeout(idleT);idleT=setTimeout(function(){bar.classList.add('idle');},touch?2600:4000);}
+var fsb=document.getElementById('fs'),de0=document.documentElement,canFs=!!(de0.requestFullscreen||de0.webkitRequestFullscreen)&&(document.fullscreenEnabled||document.webkitFullscreenEnabled);
+if(!canFs)fsb.style.display='none';
+function toggleFs(){var el=document.fullscreenElement||document.webkitFullscreenElement;
+ if(el){(document.exitFullscreen||document.webkitExitFullscreen).call(document);}else{(de0.requestFullscreen||de0.webkitRequestFullscreen).call(de0);}}
+function fit(){var vv=window.visualViewport,de=document.documentElement,w=vv?vv.width:de.clientWidth,h=vv?vv.height:de.clientHeight,s=Math.min(w/1920,h/1080);
  stage.style.transform='scale('+s+')';frame.style.width=1920*s+'px';frame.style.height=1080*s+'px';
  frame.style.left=(w-1920*s)/2+'px';frame.style.top=Math.max(0,(h-1080*s)/2)+'px';}
 function sec(l,i){return stage.querySelector('section[data-lang="'+l+'"][data-n="'+i+'"]');}
@@ -987,8 +995,11 @@ document.addEventListener('click',function(e){var t=e.target;
  var b=t.closest&&t.closest('[data-set]');if(b){var onCover=!!b.closest('.langpick');show(b.dataset.set,onCover?2:n,true);return;}
  if(t.closest&&t.closest('#prev')){show(lang,n-1,true);return;}
  if(t.closest&&t.closest('#next')){show(lang,n+1,true);return;}
+ if(t.closest&&t.closest('#fs')){toggleFs();return;}
  if(t.closest&&(t.closest('a')||t.closest('#bar')))return;
- if(t.closest&&t.closest('#stage')&&n<N)show(lang,n+1,true);});
+ var x=e.clientX/(window.visualViewport?visualViewport.width:innerWidth);
+ if(x<0.25){show(lang,n-1,true);}else if(n<N){show(lang,n+1,true);}});
+['mousemove','touchstart','keydown','click'].forEach(function(ev){document.addEventListener(ev,wake,{passive:true});});
 document.addEventListener('keydown',function(e){if(e.metaKey||e.ctrlKey||e.altKey)return;var k=e.key;
  if(k==='ArrowRight'||k==='PageDown'||k===' '||k==='Enter'){e.preventDefault();show(lang,n+1,true);}
  else if(k==='ArrowLeft'||k==='PageUp'||k==='Backspace'){e.preventDefault();show(lang,n-1,true);}
@@ -997,8 +1008,8 @@ var tx=null,ty=null;
 document.addEventListener('touchstart',function(e){tx=e.touches[0].clientX;ty=e.touches[0].clientY;},{passive:true});
 document.addEventListener('touchend',function(e){if(tx===null)return;var dx=e.changedTouches[0].clientX-tx,dy=e.changedTouches[0].clientY-ty;tx=null;
  if(Math.abs(dx)>50&&Math.abs(dx)>Math.abs(dy)*1.5)show(lang,n+(dx<0?1:-1),true);},{passive:true});
-addEventListener('resize',fit);addEventListener('orientationchange',fit);
+addEventListener('resize',fit);addEventListener('orientationchange',fit);if(window.visualViewport)visualViewport.addEventListener('resize',fit);document.addEventListener('fullscreenchange',fit);document.addEventListener('webkitfullscreenchange',fit);
 addEventListener('popstate',function(){var s=fromHash();show(s[0],s[1],false);});
-fit();setTimeout(fit,60);setTimeout(fit,400);addEventListener('load',fit);var s0=fromHash();show(s0[0],s0[1],false);
+wake();fit();setTimeout(fit,60);setTimeout(fit,400);addEventListener('load',fit);var s0=fromHash();show(s0[0],s0[1],false);
 })();</script>
 </body></html>
